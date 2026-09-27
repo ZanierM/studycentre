@@ -205,6 +205,12 @@ body.offhours #wrap{display:none}
   var fakeStart = null, realStart = Date.now();
   var q = /[?&]now=([^&]+)/.exec(location.search);
   if (q) { var t = decodeURIComponent(q[1]).split('T'); var dd = parseDate(t[0]); var hm = (t[1] || '10:00').split(':'); dd.setHours(+hm[0], +hm[1], 0); fakeStart = dd.getTime(); }
+  // Or add ?preview to see the next weekday at 10:30 (handy for checking it in the evening or at weekends)
+  if (!fakeStart && /[?&]preview/.test(location.search)) {
+    var pv = new Date(); if (pv.getHours() >= 16) pv.setDate(pv.getDate() + 1);
+    while (pv.getDay() === 0 || pv.getDay() === 6) pv.setDate(pv.getDate() + 1);
+    pv.setHours(10, 30, 0, 0); fakeStart = pv.getTime();
+  }
   function now() { return fakeStart ? new Date(fakeStart + (Date.now() - realStart)) : new Date(); }
 
   // ================= content.txt =================
@@ -421,7 +427,7 @@ body.offhours #wrap{display:none}
     return '<span class="kicker">Notices</span>' + C.notices.slice(0, 5).map(function (n) { return '<div class="p" style="font-size:44px;color:var(--lilac);margin-top:34px">' + esc(n) + '</div>'; }).join('');
   }
 
-  var BUILDERS = [panelCountdown, panelWeek, panelTip, panelSupport, panelThought, panelNotices];
+  var BUILDERS = [panelCountdown, panelTip, panelSupport, panelThought, panelNotices];
   function buildPanels(keepPlace) {
     // Panels are rebuilt each rotation so countdowns and dates stay current
     if (!keepPlace) { idx = -1; rotate(); clearInterval(rotTimer); rotTimer = setInterval(rotate, (+setting('seconds per panel', 0, '20') || 20) * 1000); }

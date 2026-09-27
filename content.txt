@@ -67,59 +67,11 @@ listed underneath too, even when it's months away.)
 2027-06-09 | Year 12 Parents' Evening
 2027-07-21 | Last day of the school year
 
-# EVENTS
-(date, or "date to date" | what). The screen shows this week's and next week's.
-2026-10-09 | EPQ Presentation Afternoon
-2026-10-13 to 2026-10-14 | Open Mornings
-2026-10-15 | Open Evening
-2026-10-16 | Tech trip to Eltham Palace (Years 10 and 12)
-2026-10-21 | Settling-in Reviews completed by teachers
-2026-10-22 | Classics trip to the British Museum (Years 10 and 12)
-2026-10-23 | Settling-in Reviews published · last day of Term 1
-2026-11-04 | Term 2 begins
-2026-11-16 | Year 12 Parents' Evening, 4–7pm
-2026-11-23 | Development Day: no students in school
-2026-12-08 | Christmas Showcase, 6–8pm
-2026-12-10 | Celebration Lunch
-2026-12-14 | Assessment Report 1 published
-2026-12-15 to 2026-12-16 | Christmas Lunch
-2026-12-17 | Pantomime
-2026-12-18 | Elf Quiz · last day of Term 2
-2027-01-04 | Term 3 begins
-2027-01-13 to 2027-01-14 | Year 12 Criminology Controlled Assessments, P1–4
-2027-01-27 | University Challenge Final
-2027-02-12 | Last day of Term 3
-2027-02-22 | Term 4 begins
-2027-03-04 | World Book Day
-2027-03-09 | Assessment Report 2 published
-2027-03-15 to 2027-03-19 | Year 12 Exam Briefings
-2027-03-18 | Whole School Careers Fair
-2027-03-23 to 2027-03-24 | Culture Days
-2027-03-24 | Sixth Form Prefect Lunch · Performance Showcase
-2027-03-24 to 2027-03-25 | Year 12 Art, Photography and Textiles Prep Exams
-2027-03-30 to 2027-04-02 | Easter Revision sessions
-2027-04-12 to 2027-04-22 | Year 12 Prep Exams
-2027-04-23 | Prep Exam catch-up day
-2027-04-26 to 2027-04-30 | Year 12 Prep Exam Orals
-2027-05-03 | Bank holiday
-2027-05-07 | Year 13's last day in school
-2027-05-14 | Assessment Report 3 published
-2027-05-28 | Fun Run · last day of Term 5
-2027-06-07 | Term 6 begins
-2027-06-09 | Year 12 Parents' Evening, 4–7pm
-2027-06-23 | Sports Day
-2027-06-24 | Creative Arts Exhibition
-2027-06-30 | Pride Festival
-2027-07-06 | Summer Concert, 4–5pm
-2027-07-12 | School Picnic
-2027-07-12 to 2027-07-16 | Year 12 resits
-2027-07-21 | Last day of the school year
-
 # SUPPORT
 (who | where or when). Shown on the "Who can help?" panel.
 Your form tutor | Every morning in registration
 Mr Zanier, Learning Leader Year 12 | Sixth Form office
-Head of Sixth Form | Sixth Form office
+Mrs Murfet, Head of Sixth Form | Sixth Form office
 Pastoral and wellbeing team | Ask at Student Services
 Worried about yourself or a friend? | Talk to any member of staff today
 
@@ -130,9 +82,9 @@ Please leave tables clear and chairs tucked in when you go.
 
 # ZONES
 (shown along the bottom of the screen)
-Quiet Study Zone (downstairs, tables A–G): low voices, focused work
-Silent Study (upstairs, tables M–N): no talking at all
-Break Space: break and lunch only
+Silent Study (upstairs room): no talking, phones away, no audio
+Quiet Study Zone (downstairs, tables A–G): quiet voices, phones away, headphones OK
+Break Space (downstairs sofa corner): break and lunch only, chat quietly, keep it tidy
 
 # MY TIPS
 (optional: add your own study tips. Format: title | what to do)
