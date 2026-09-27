@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Year 12 Study Centre</title>
+<style>
+/* Brand: ink #1f2430, plum #5b3a66, lilac-grey #f1eef6, Calibri */
+:root{
+  --ink:#1f2430; --ink2:#272d3b; --ink3:#313849; --plum:#5b3a66; --plum2:#8c63a0; --plum3:#c9b3d6;
+  --lilac:#f1eef6; --muted:#a9a3b8; --good:#6fcf97; --warn:#f2b35b; --stop:#e27a7a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#15181f;font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;color:var(--lilac)}
+/* Everything is laid out on a fixed 1920x1080 stage and scaled to fit any screen */
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background:var(--ink);overflow:hidden}
+#wrap{position:absolute;left:0;top:0;width:1920px;height:1080px;transition:transform 2s ease}
+
+/* ---------- Header ---------- */
+header{position:absolute;left:0;top:0;width:1920px;height:150px;padding:30px 60px;background:var(--plum)}
+header .t1{font-size:56px;font-weight:700;letter-spacing:.5px;line-height:1.05}
+header .t2{font-size:26px;color:var(--plum3);margin-top:4px}
+header .clock{position:absolute;right:60px;top:22px;text-align:right}
+header .time{font-size:84px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+header .date{font-size:26px;color:var(--plum3);margin-top:4px}
+
+/* ---------- Main rotating panel ---------- */
+#main{position:absolute;left:60px;top:190px;width:1200px;height:740px;background:var(--ink2);border-radius:28px;padding:48px 56px;overflow:hidden}
+.panel{position:absolute;left:56px;top:48px;right:56px;bottom:40px;opacity:0;transition:opacity .9s ease}
+.panel.on{opacity:1}
+.kicker{display:inline-block;font-size:24px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum3);background:rgba(140,99,160,.22);padding:8px 18px;border-radius:40px}
+.h{font-size:64px;font-weight:700;line-height:1.1;margin-top:26px}
+.p{font-size:34px;line-height:1.4;color:#dcd6e6;margin-top:20px}
+.big{font-size:210px;font-weight:700;line-height:1;color:var(--plum3);font-variant-numeric:tabular-nums}
+.row{display:block;overflow:hidden;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:34px}
+.row:last-child{border-bottom:0}
+.row .l{float:left;max-width:820px}
+.row .r{float:right;color:var(--plum3);font-weight:700;font-variant-numeric:tabular-nums}
+.row small{display:block;font-size:24px;color:var(--muted);margin-top:2px}
+.grp{font-size:24px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:26px 0 4px}
+.grp:first-of-type{margin-top:22px}
+.today{color:var(--warn)}
+.try{margin-top:34px;padding:26px 30px;border-left:8px solid var(--plum2);background:rgba(140,99,160,.14);border-radius:0 18px 18px 0;font-size:34px;line-height:1.4}
+.try b{color:var(--plum3)}
+#dots{position:absolute;right:44px;top:62px}
+#dots i{display:inline-block;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);margin-right:12px}
+#dots i.on{background:var(--plum3)}
+
+/* ---------- Side column ---------- */
+.card{position:absolute;left:1300px;width:560px;background:var(--ink2);border-radius:28px;padding:30px 36px}
+#now{top:190px;height:250px}
+#now .lbl{font-size:24px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700}
+#now .name{font-size:54px;font-weight:700;margin-top:6px;line-height:1.1}
+#now .left{font-size:30px;color:#dcd6e6;margin-top:6px}
+.bar{height:14px;background:rgba(255,255,255,.1);border-radius:7px;margin-top:22px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--plum2);border-radius:7px;transition:width 1s linear}
+#focus{top:470px;height:260px}
+#focus svg{position:absolute;left:30px;top:30px}
+#focus .txt{position:absolute;left:250px;top:44px;right:30px}
+#focus .state{font-size:40px;font-weight:700;line-height:1.1}
+#focus .sub{font-size:26px;color:#dcd6e6;margin-top:10px;line-height:1.3}
+#space{top:760px;height:170px}
+#space .pill{display:inline-block;font-size:34px;font-weight:700;padding:10px 26px;border-radius:40px;margin-top:10px}
+#space .lbl{font-size:24px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700}
+#space .note{font-size:24px;color:var(--muted);margin-top:10px}
+.open{background:rgba(111,207,151,.18);color:var(--good)}
+.closed{background:rgba(226,122,122,.16);color:var(--stop)}
+
+/* ---------- Footer ---------- */
+footer{position:absolute;left:0;bottom:0;width:1920px;height:110px;padding:0 60px;background:#191d27}
+#weather{position:absolute;right:60px;top:22px;height:66px;max-width:780px;font-size:28px;line-height:66px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#dcd6e6;text-align:right}
+#weather b{font-size:44px;margin-right:12px;vertical-align:-3px}
+#ticker{position:absolute;left:60px;right:860px;top:22px;height:66px;font-size:30px;line-height:66px;color:#dcd6e6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .8s}
+#ticker b{color:var(--plum3)}
+
+/* ---------- Out of hours ---------- */
+#off{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#0b0c10;display:none;text-align:center;padding-top:330px;color:#8a8496}
+#off .time{font-size:200px;font-weight:700;line-height:1;color:#5d5868}
+#off .msg{font-size:44px;margin-top:40px}
+#off .sub{font-size:30px;margin-top:14px;color:#5d5868}
+body.offhours #off{display:block}
+body.offhours #wrap{display:none}
+#err{position:absolute;right:20px;top:160px;font-size:20px;color:var(--warn);display:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="wrap">
+    <header>
+      <div class="t1" id="title">Year 12 Study Centre</div>
+      <div class="t2" id="subtitle"></div>
+      <div class="clock"><div class="time" id="time">--:--</div><div class="date" id="date"></div></div>
+    </header>
+
+    <section id="main"><div id="panels"></div><div id="dots"></div></section>
+
+    <div class="card" id="now"><div class="lbl">Right now</div><div class="name" id="nowName">–</div><div class="left" id="nowLeft"></div><div class="bar"><i id="nowBar"></i></div></div>
+    <div class="card" id="focus">
+      <svg width="190" height="190" viewBox="0 0 190 190" aria-hidden="true">
+        <circle cx="95" cy="95" r="80" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="16"/>
+        <circle id="ring" cx="95" cy="95" r="80" fill="none" stroke="#8c63a0" stroke-width="16" stroke-linecap="round" transform="rotate(-90 95 95)" stroke-dasharray="502.65" stroke-dashoffset="502.65"/>
+        <text id="ringTxt" x="95" y="108" text-anchor="middle" fill="#f1eef6" font-size="44" font-weight="700" font-family="Calibri,Carlito,Arial,sans-serif">–</text>
+      </svg>
+      <div class="txt"><div class="state" id="focusState">Focus timer</div><div class="sub" id="focusSub"></div></div>
+    </div>
+    <div class="card" id="space"><div class="lbl">Break Space</div><div class="pill closed" id="spacePill">Closed</div><div class="note" id="spaceNote"></div></div>
+
+    <footer><div id="weather"></div><div id="ticker"></div></footer>
+    <div id="err"></div>
+  </div>
+  <div id="off"><div class="time" id="offTime">--:--</div><div class="msg" id="offMsg"></div><div class="sub" id="offSub"></div></div>
+</div>
+
+<script>
+/* Written in plain, older-style JavaScript so it runs on smart-TV browsers. */
+(function () {
+  'use strict';
+
+  // ================= Built-in content (add your own in content.txt) =================
+  var TIPS = [
+    ['Retrieval practice', 'Close your notes and write down everything you can remember about a topic. Then check what you missed.', 'Blank-page a topic from last week before you look at your notes.'],
+    ['Spaced practice', 'Revisit topics a few days apart instead of cramming. Forgetting a little between sessions makes the learning stick.', 'Pick one topic from a month ago and test yourself on it today.'],
+    ['Interleaving', 'Mix up topics or question types in one session so you practise choosing the right method.', 'Do three past-paper questions from three different topics.'],
+    ['Elaboration', 'Ask yourself “why?” and “how?” and link new ideas to things you already know.', 'Explain why one key idea from today matters, in three sentences.'],
+    ['Dual coding', 'Combine words with visuals such as diagrams, timelines and flowcharts.', 'Turn a page of notes into one labelled diagram.'],
+    ['Concrete examples', 'Abstract ideas stick when you attach real examples to them.', 'Find two real-world examples for a concept you’re learning.'],
+    ['The Pomodoro method', 'Work for 25 minutes with full focus, then take a 5-minute break. The timer on the right does this for you.', 'Put your phone out of reach until the next break.'],
+    ['Self-explanation', 'Talk yourself through each step of a worked example as if teaching it.', 'Explain one step of a method out loud in your head.'],
+    ['Flashcards done well', 'Put questions on the front, not just keywords, and keep testing the cards you get wrong.', 'Make five question flashcards from today’s lesson.'],
+    ['The Leitner system', 'Sort flashcards into boxes: the ones you get right move to a box you review less often.', 'Sort your flashcards into “know it” and “not yet”.'],
+    ['Past papers', 'Exam questions train you to use knowledge the way the exam asks for it.', 'Do one question under timed conditions, then mark it with the mark scheme.'],
+    ['Read the mark scheme', 'Mark schemes show exactly what examiners reward. Learn the command words.', 'Highlight the command words in three recent questions.'],
+    ['Cornell notes', 'Split the page into notes, cue questions and a short summary at the bottom.', 'Add three cue questions to yesterday’s notes.'],
+    ['The feynman technique', 'Explain a topic in simple words as if to a younger student. Gaps in your explanation show gaps in understanding.', 'Explain one tricky idea on a single sticky note.'],
+    ['Plan before you write', 'A two-minute essay plan saves marks. Decide your argument before you start.', 'Plan (don’t write) an answer to one essay question.'],
+    ['Brain dump', 'Start a session by writing down everything you already know. It warms up your memory.', 'Spend 3 minutes brain-dumping your current topic.'],
+    ['Single-tasking', 'Switching between tasks costs focus. Finish one thing before starting the next.', 'Write down the ONE thing you’ll finish this period.'],
+    ['Phone out of sight', 'Even a silent phone on the desk can pull your attention.', 'Put your phone in your bag until break.'],
+    ['Active reading', 'Read with a question in mind and stop to summarise every few paragraphs.', 'Write a one-line summary after each page you read.'],
+    ['Teach it', 'Explaining to someone else is one of the best ways to learn.', 'Plan how you’d teach today’s topic in 5 minutes.'],
+    ['Mind maps', 'Map how ideas connect instead of listing them.', 'Draw a mind map of one unit from memory.'],
+    ['Learn from mistakes', 'Keep a list of questions you got wrong and why. Revisit it before tests.', 'Start a “mistakes log” for one subject.'],
+    ['Set a clear goal', 'Specific goals (“answer 3 questions on elasticity”) beat vague ones (“revise economics”).', 'Write a specific goal for this study period.'],
+    ['Sleep is study', 'Sleep helps your brain store what you learned during the day.', 'Aim for a consistent bedtime this week.'],
+    ['Quiz your friends', 'Low-stakes quizzing at break turns revision into retrieval practice.', 'Write three quiz questions to ask a friend at lunch.'],
+    ['Wider reading', 'Reading beyond the specification builds understanding and gives you examples to use.', 'Read one article linked to one of your subjects this week.'],
+    ['Timed practice', 'Practise under exam timings so the real thing feels normal.', 'Time yourself on one question: one minute per mark.'],
+    ['Review in 24 hours', 'A quick review the day after a lesson makes you forget much less.', 'Spend 10 minutes reviewing yesterday’s lessons.'],
+    ['Summarise in threes', 'Reduce a topic to its three most important points.', 'Summarise your current topic in three bullet points.'],
+    ['Check your understanding', 'Don’t mistake familiar for learned. Can you do it without notes?', 'Try one question without looking at anything.'],
+  ];
+  var THOUGHTS = [
+    'Small steps every day add up to big results.',
+    'You don’t have to be great to start, but you have to start to be great.',
+    'Progress, not perfection.',
+    'The best time to start revising was yesterday. The next best time is now.',
+    'Focus on what you can control today.',
+    'Mistakes are proof that you’re trying.',
+    'Consistency beats intensity.',
+    'Discipline is choosing what you want most over what you want now.',
+    'Hard work compounds, just like interest.',
+    'Be proud of how far you’ve come, and keep going.',
+    'One focused hour beats three distracted ones.',
+    'Ask the question. Someone else is wondering too.',
+    'Your future self will thank you for this study period.',
+    'Effort is a skill you can build.',
+    'Done is better than perfect. Then make it better.',
+    'Rest is part of the work, not a break from it.',
+    'Don’t count the days, make the days count.',
+    'Curiosity is the engine of learning.',
+    'Confidence comes from preparation.',
+    'Every expert was once a beginner.',
+    'Today’s effort is tomorrow’s result.',
+    'It’s a marathon, not a sprint. Pace yourself.',
+    'Be kind to yourself and others. Everyone is working hard.',
+    'Challenge is where learning happens.',
+    'Start where you are. Use what you have. Do what you can.',
+  ];
+  var WELLBEING = [
+    'Drink some water and take a proper break away from the screen.',
+    'Get outside for a few minutes at break. Fresh air helps you focus.',
+    'Feeling overwhelmed? Break the task into the smallest possible first step.',
+    'It’s OK not to be OK. Talking to someone really helps.',
+    'Sleep, food and movement all affect how well you learn.',
+    'Look out for your friends. If someone seems low, check in.',
+  ];
+
+  // ================= Helpers =================
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  function parseDate(s) { var p = s.trim().split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function dayStart(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function daysBetween(a, b) { return Math.round((dayStart(b) - dayStart(a)) / 864e5); }
+  function longDate(d) { return DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()]; }
+  function shortDate(d) { return DAYS[d.getDay()].slice(0, 3) + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()].slice(0, 3); }
+  function mins(hhmm) { var p = hhmm.trim().split(':'); return (+p[0]) * 60 + (+p[1]); }
+  function hhmm(m) { return pad(Math.floor(m / 60)) + ':' + pad(m % 60); }
+  function dayOfYear(d) { return Math.floor((dayStart(d) - new Date(d.getFullYear(), 0, 1)) / 864e5); }
+
+  // For testing: add ?now=2026-10-07T10:30 to the address to preview any date and time
+  var fakeStart = null, realStart = Date.now();
+  var q = /[?&]now=([^&]+)/.exec(location.search);
+  if (q) { var t = decodeURIComponent(q[1]).split('T'); var dd = parseDate(t[0]); var hm = (t[1] || '10:00').split(':'); dd.setHours(+hm[0], +hm[1], 0); fakeStart = dd.getTime(); }
+  function now() { return fakeStart ? new Date(fakeStart + (Date.now() - realStart)) : new Date(); }
+
+  // ================= content.txt =================
+  var C = null;
+  function parseContent(text) {
+    var c = { settings: {}, bells: { week: [], fri: [] }, terms: [], daysOff: [], countdowns: [], events: [], support: [], notices: [], zones: [], tips: [], quotes: [] };
+    var sec = null;
+    text.split(/\r?\n/).forEach(function (raw) {
+      var line = raw.trim();
+      if (!line) return;
+      if (line.charAt(0) === '#') { sec = line.slice(1).trim().toUpperCase(); return; }
+      if (!sec || line.charAt(0) === '(' || line.charAt(0) === '=') return;
+      var p = line.split('|').map(function (x) { return x.trim(); });
+      try {
+        if (sec === 'SETTINGS') c.settings[p[0].toLowerCase()] = p.slice(1);
+        else if (sec === 'BELL TIMES MON-THU') c.bells.week.push({ name: p[0], start: mins(p[1]), end: mins(p[2]) });
+        else if (sec === 'BELL TIMES FRIDAY') c.bells.fri.push({ name: p[0], start: mins(p[1]), end: mins(p[2]) });
+        else if (sec === 'TERMS') c.terms.push({ start: parseDate(p[0]), end: parseDate(p[1]) });
+        else if (sec === 'DAYS OFF IN TERM') c.daysOff.push({ date: ymd(parseDate(p[0])), why: p[1] || 'No school' });
+        else if (sec === 'COUNTDOWNS') c.countdowns.push({ date: parseDate(p[0]), what: p[1], big: /big/i.test(p[2] || '') });
+        else if (sec === 'EVENTS') {
+          var r = p[0].split(/\s+to\s+/i);
+          c.events.push({ start: parseDate(r[0]), end: parseDate(r[1] || r[0]), what: p[1] });
+        }
+        else if (sec === 'SUPPORT') c.support.push({ who: p[0], where: p[1] || '' });
+        else if (sec === 'NOTICES') c.notices.push(line);
+        else if (sec === 'ZONES') c.zones.push(line);
+        else if (sec === 'MY TIPS') c.tips.push([p[0], p[1] || '', '']);
+        else if (sec === 'MY QUOTES') c.quotes.push(line);
+      } catch (e) { /* skip a badly formatted line rather than break the screen */ }
+    });
+    return c;
+  }
+  function setting(name, i, fallback) { var v = C && C.settings[name]; return v && v[i] ? v[i] : fallback; }
+
+  function loadContent() {
+    var x = new XMLHttpRequest();
+    x.open('GET', 'content.txt?t=' + Date.now(), true);
+    x.onload = function () {
+      if (x.status >= 200 && x.status < 300) {
+        var first = !C;
+        C = parseContent(x.responseText);
+        $('err').style.display = 'none';
+        if (first) { buildPanels(); loadWeather(); } else buildPanels(true);
+      } else showErr();
+    };
+    x.onerror = showErr;
+    x.send();
+  }
+  function showErr() { if (!C) { $('err').textContent = 'Could not load content.txt. Retrying…'; $('err').style.display = 'block'; } }
+
+  // ================= School day logic =================
+  function isSchoolDay(d) {
+    var wd = d.getDay();
+    if (wd === 0 || wd === 6) return false;
+    var key = ymd(d);
+    for (var i = 0; i < C.daysOff.length; i++) if (C.daysOff[i].date === key) return false;
+    var t = dayStart(d);
+    for (var j = 0; j < C.terms.length; j++) if (t >= C.terms[j].start && t <= C.terms[j].end) return true;
+    return false;
+  }
+  function nextSchoolDay(d) {
+    var x = dayStart(d);
+    for (var i = 0; i < 120; i++) { x = new Date(x.getFullYear(), x.getMonth(), x.getDate() + 1); if (isSchoolDay(x)) return x; }
+    return null;
+  }
+  function bellsFor(d) { return d.getDay() === 5 && C.bells.fri.length ? C.bells.fri : C.bells.week; }
+  var isBreak = function (name) { return /break|lunch/i.test(name); };
+
+  // What is happening at this minute? Returns { name, start, end, kind }
+  function currentSlot(d) {
+    var m = d.getHours() * 60 + d.getMinutes() + d.getSeconds() / 60;
+    var b = bellsFor(d);
+    if (!b.length) return { name: 'Study time', kind: 'none' };
+    if (m < b[0].start) return { name: 'Before school', kind: 'before', end: b[0].start };
+    for (var i = 0; i < b.length; i++) {
+      if (m >= b[i].start && m < b[i].end) return { name: b[i].name, start: b[i].start, end: b[i].end, kind: isBreak(b[i].name) ? 'break' : /reg/i.test(b[i].name) ? 'reg' : 'lesson' };
+      if (b[i + 1] && m >= b[i].end && m < b[i + 1].start) return { name: 'Changeover', start: b[i].end, end: b[i + 1].start, kind: 'change', next: b[i + 1].name };
+    }
+    return { name: 'School day finished', kind: 'after' };
+  }
+
+  // ================= Header, Now, Focus, Break Space =================
+  function tick() {
+    if (!C) return;
+    var d = now();
+    var m = d.getHours() * 60 + d.getMinutes();
+    var time = pad(d.getHours()) + ':' + pad(d.getMinutes());
+    $('time').textContent = time;
+    $('date').textContent = longDate(d);
+    $('offTime').textContent = time;
+
+    // Out of hours: dim clock
+    var school = isSchoolDay(d);
+    var on = mins(setting('screen on from', 0, '07:45')), off = mins(setting('screen off after', 0, '16:30'));
+    var offhours = !school || m < on || m >= off;
+    document.body.className = offhours ? 'offhours' : '';
+    if (offhours) {
+      var nx = school && m < on ? d : nextSchoolDay(d);
+      var gap = nx ? daysBetween(d, nx) : 0;
+      var holiday = gap > 3;
+      $('offMsg').textContent = holiday ? 'Enjoy the holiday!' : (school && m >= off) || gap >= 1 ? 'See you ' + (gap === 1 ? 'tomorrow' : 'on ' + DAYS[nx.getDay()]) + '!' : 'Good morning!';
+      $('offSub').textContent = nx ? (holiday ? 'Back in school on ' : 'Next school day: ') + longDate(nx) : '';
+      return;
+    }
+
+    var s = currentSlot(d);
+    var mm = d.getHours() * 60 + d.getMinutes() + d.getSeconds() / 60;
+    var leftMin = s.end ? Math.max(0, Math.ceil(s.end - mm)) : null;
+    $('nowName').textContent = s.kind === 'change' ? 'Changeover' : s.name;
+    $('nowLeft').textContent = s.kind === 'change' ? s.next + ' starts at ' + hhmm(s.end)
+      : s.end ? (s.kind === 'before' ? 'School starts at ' + hhmm(s.end) : 'Ends at ' + hhmm(s.end) + ' · ' + leftMin + ' min left') : '';
+    $('nowBar').style.width = s.start != null && s.end ? Math.min(100, (mm - s.start) / (s.end - s.start) * 100) + '%' : '0%';
+
+    // Break Space
+    var open = s.kind === 'break';
+    $('spacePill').textContent = open ? 'Open' : 'Closed';
+    $('spacePill').className = 'pill ' + (open ? 'open' : 'closed');
+    var b = bellsFor(d), nextBreak = null;
+    for (var i = 0; i < b.length; i++) if (isBreak(b[i].name) && b[i].start > mm) { nextBreak = b[i]; break; }
+    $('spaceNote').textContent = open ? 'Until ' + hhmm(s.end) + ' (' + s.name.toLowerCase() + ')' : nextBreak ? 'Opens at ' + hhmm(nextBreak.start) + ' for ' + nextBreak.name.toLowerCase() : 'Break and lunch only';
+
+    // Focus timer: 25 minutes focus, 5 minutes break, starting from the beginning of each lesson
+    var ring = $('ring'), C0 = 502.65;
+    if (s.kind === 'lesson') {
+      var el = mm - s.start, inCycle = el % 30, cycleStart = s.start + Math.floor(el / 30) * 30;
+      var focusing = inCycle < 25;
+      var blockEnd = Math.min(s.end, cycleStart + (focusing ? 25 : 30)), blockLen = focusing ? Math.min(25, s.end - cycleStart) : Math.min(5, s.end - cycleStart - 25);
+      var rem = Math.max(0, blockEnd - mm);
+      var frac = blockLen > 0 ? 1 - rem / blockLen : 1;
+      ring.setAttribute('stroke', focusing ? '#8c63a0' : '#6fcf97');
+      ring.setAttribute('stroke-dashoffset', String(C0 * (1 - frac)));
+      $('ringTxt').textContent = Math.floor(rem) + ':' + pad(Math.floor((rem % 1) * 60));
+      $('focusState').textContent = focusing ? 'Focus' : 'Short break';
+      $('focusSub').textContent = focusing ? 'Phone away, one task, full attention. Break at ' + hhmm(Math.round(blockEnd)) + '.' : 'Stretch, drink some water, stay in your seat. Focus again at ' + hhmm(Math.round(blockEnd)) + '.';
+    } else {
+      ring.setAttribute('stroke', '#6fcf97');
+      ring.setAttribute('stroke-dashoffset', '0');
+      $('ringTxt').textContent = s.kind === 'break' && leftMin != null ? leftMin + 'm' : '–';
+      $('focusState').textContent = s.kind === 'break' ? 'Break time' : 'Focus timer';
+      $('focusSub').textContent = s.kind === 'break' ? 'Rest properly. The next focus block starts with the next period.' : 'Starts with the next period: 25 minutes focus, 5 minutes break.';
+    }
+  }
+
+  // ================= Rotating panels =================
+  var panels = [], idx = -1, rotTimer = null;
+  function upcoming(list, d) { return list.filter(function (x) { return daysBetween(d, x.date) >= 0; }).sort(function (a, b) { return a.date - b.date; }); }
+
+  function panelCountdown() {
+    var d = now(), list = upcoming(C.countdowns, d);
+    if (!list.length) return null;
+    // The next countdown is the big one; anything marked "big" stays listed underneath too
+    var main = list[0];
+    var rest = list.slice(1, 4);
+    var pinned = list.filter(function (x) { return x.big && x !== main && rest.indexOf(x) < 0; })[0];
+    if (pinned) rest = rest.slice(0, 2).concat([pinned]);
+    var n = daysBetween(d, main.date);
+    var schoolDays = 0;
+    for (var x = dayStart(d); x < main.date; x = new Date(x.getFullYear(), x.getMonth(), x.getDate() + 1)) if (isSchoolDay(x)) schoolDays++;
+    return '<span class="kicker">Countdown</span>' +
+      '<div style="overflow:hidden;margin-top:24px"><div class="big" style="float:left;min-width:300px;margin-right:50px">' + (n === 0 ? 'Today' : n) + '</div>' +
+      '<div style="overflow:hidden;padding-top:20px"><div class="p" style="margin-top:0">' + (n === 0 ? '' : (n === 1 ? 'day' : 'days') + ' until') + '</div>' +
+      '<div class="h" style="margin-top:4px;font-size:' + (main.what.length > 22 ? 48 : 64) + 'px">' + esc(main.what) + '</div><div class="p" style="margin-top:10px">' + longDate(main.date) +
+      (n > 7 ? ' · about ' + schoolDays + ' school days' : '') + '</div></div></div>' +
+      (rest.length ? '<div class="grp">Also coming up</div>' + rest.map(function (c) {
+        var k = daysBetween(d, c.date);
+        return '<div class="row"><span class="l">' + esc(c.what) + '<small>' + shortDate(c.date) + '</small></span><span class="r">' + (k === 0 ? 'Today' : k + (k === 1 ? ' day' : ' days')) + '</span></div>';
+      }).join('') : '');
+  }
+
+  function panelWeek() {
+    var d = dayStart(now());
+    var dow = d.getDay() === 0 ? 7 : d.getDay();
+    var endThis = new Date(d.getFullYear(), d.getMonth(), d.getDate() + (7 - dow));
+    var endNext = new Date(endThis.getFullYear(), endThis.getMonth(), endThis.getDate() + 7);
+    var ev = C.events.filter(function (e) { return e.end >= d && e.start <= endNext; }).sort(function (a, b) { return a.start - b.start; });
+    if (!ev.length) return null;
+    var row = function (e) {
+      var isToday = e.start <= d && e.end >= d;
+      var when = e.end > e.start ? shortDate(e.start) + ' – ' + shortDate(e.end) : shortDate(e.start);
+      return '<div class="row"><span class="l">' + esc(e.what) + '</span><span class="r ' + (isToday ? 'today' : '') + '">' + (isToday ? 'Today' : when) + '</span></div>';
+    };
+    var thisWeek = ev.filter(function (e) { return e.start <= endThis; }).slice(0, 6);
+    var nextWeek = ev.filter(function (e) { return e.start > endThis; }).slice(0, 6 - Math.min(thisWeek.length, 4));
+    return '<span class="kicker">What’s on</span>' +
+      (thisWeek.length ? '<div class="grp">This week</div>' + thisWeek.map(row).join('') : '<div class="grp">This week</div><div class="row"><span class="l" style="color:var(--muted)">Nothing special: a good week to get ahead</span></div>') +
+      (nextWeek.length ? '<div class="grp">Next week</div>' + nextWeek.map(row).join('') : '');
+  }
+
+  function panelTip() {
+    var all = TIPS.concat(C.tips);
+    var t = all[dayOfYear(now()) % all.length];
+    return '<span class="kicker">Study technique of the day</span><div class="h">' + esc(t[0]) + '</div><div class="p">' + esc(t[1]) + '</div>' +
+      (t[2] ? '<div class="try"><b>Try this now:</b> ' + esc(t[2]) + '</div>' : '');
+  }
+
+  var qIdx = 0;
+  function panelThought() {
+    var all = C.quotes.length ? C.quotes.concat(THOUGHTS) : THOUGHTS;
+    var start = dayOfYear(now()) * 3;
+    var t = all[(start + qIdx++) % all.length];
+    return '<span class="kicker">Thought for the day</span><div style="font-size:84px;font-weight:700;line-height:1.15;margin-top:90px;color:var(--lilac)">“' + esc(t) + '”</div>';
+  }
+
+  function panelSupport() {
+    var w = WELLBEING[dayOfYear(now()) % WELLBEING.length];
+    return '<span class="kicker">Who can help?</span><div class="h" style="font-size:54px">You’re never on your own</div>' +
+      C.support.slice(0, 6).map(function (s) { return '<div class="row"><span class="l">' + esc(s.who) + '</span><span class="r" style="font-weight:400;font-size:28px;color:#dcd6e6">' + esc(s.where) + '</span></div>'; }).join('') +
+      '<div class="try">' + esc(w) + '</div>';
+  }
+
+  function panelNotices() {
+    if (!C.notices.length) return null;
+    return '<span class="kicker">Notices</span>' + C.notices.slice(0, 5).map(function (n) { return '<div class="p" style="font-size:44px;color:var(--lilac);margin-top:34px">' + esc(n) + '</div>'; }).join('');
+  }
+
+  var BUILDERS = [panelCountdown, panelWeek, panelTip, panelSupport, panelThought, panelNotices];
+  function buildPanels(keepPlace) {
+    // Panels are rebuilt each rotation so countdowns and dates stay current
+    if (!keepPlace) { idx = -1; rotate(); clearInterval(rotTimer); rotTimer = setInterval(rotate, (+setting('seconds per panel', 0, '20') || 20) * 1000); }
+    $('title').textContent = setting('title', 0, 'Year 12 Study Centre');
+    $('subtitle').textContent = setting('subtitle', 0, '');
+    document.title = $('title').textContent;
+  }
+  function rotate() {
+    if (!C || document.body.className === 'offhours') return;
+    var tries = 0, html = null;
+    while (!html && tries < BUILDERS.length) { idx = (idx + 1) % BUILDERS.length; html = BUILDERS[idx](); tries++; }
+    var holder = $('panels');
+    var old = holder.firstChild;
+    var el = document.createElement('div');
+    el.className = 'panel';
+    el.innerHTML = html || '';
+    holder.appendChild(el);
+    setTimeout(function () { el.className = 'panel on'; }, 30);
+    if (old) { old.className = 'panel'; setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 1000); }
+    $('dots').innerHTML = BUILDERS.map(function (f, i) { return '<i class="' + (i === idx ? 'on' : '') + '"></i>'; }).join('');
+    ticker();
+  }
+
+  // ================= Footer: zones, notices, weather =================
+  var tIdx = 0;
+  function ticker() {
+    var items = C.zones.concat(C.notices);
+    if (!items.length) return;
+    var t = $('ticker');
+    t.style.opacity = 0;
+    setTimeout(function () {
+      var s = items[tIdx++ % items.length];
+      var parts = s.split(':');
+      t.innerHTML = parts.length > 1 ? '<b>' + esc(parts[0]) + ':</b>' + esc(parts.slice(1).join(':')) : esc(s);
+      t.style.opacity = 1;
+    }, 800);
+  }
+
+  var WMO = { 0: 'Clear', 1: 'Mostly clear', 2: 'Partly cloudy', 3: 'Cloudy', 45: 'Fog', 48: 'Fog', 51: 'Light drizzle', 53: 'Drizzle', 55: 'Heavy drizzle', 61: 'Light rain', 63: 'Rain', 65: 'Heavy rain', 66: 'Freezing rain', 67: 'Freezing rain', 71: 'Light snow', 73: 'Snow', 75: 'Heavy snow', 77: 'Snow', 80: 'Showers', 81: 'Showers', 82: 'Heavy showers', 85: 'Snow showers', 86: 'Snow showers', 95: 'Thunderstorms', 96: 'Thunderstorms', 99: 'Thunderstorms' };
+  function loadWeather() {
+    var lat = setting('weather place', 1, '51.441'), lon = setting('weather place', 2, '0.368'), place = setting('weather place', 0, 'Gravesend');
+    var x = new XMLHttpRequest();
+    x.open('GET', 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,weather_code&hourly=precipitation_probability&timezone=Europe%2FLondon&forecast_days=1', true);
+    x.onload = function () {
+      try {
+        var w = JSON.parse(x.responseText);
+        var h = now().getHours(), maxP = 0, at = null;
+        for (var i = 0; i < w.hourly.time.length; i++) {
+          var hr = +w.hourly.time[i].slice(11, 13);
+          if (hr >= Math.max(h, 8) && hr <= 17 && w.hourly.precipitation_probability[i] > maxP) { maxP = w.hourly.precipitation_probability[i]; at = hr; }
+        }
+        var rain = maxP >= 40 ? ' · rain likely around ' + (at > 12 ? at - 12 + 'pm' : at + (at === 12 ? 'pm' : 'am')) : '';
+        $('weather').innerHTML = '<b>' + Math.round(w.current.temperature_2m) + '°</b>' + esc(place) + ' · ' + (WMO[w.current.weather_code] || '') + rain;
+      } catch (e) { $('weather').innerHTML = ''; }
+    };
+    x.onerror = function () { $('weather').innerHTML = ''; };
+    x.send();
+  }
+
+  // ================= Fit to screen, burn-in protection, refreshes =================
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    var st = $('stage');
+    st.style.transform = 'scale(' + s + ')';
+    st.style.left = Math.round((window.innerWidth - 1920 * s) / 2) + 'px';
+    st.style.top = Math.round((window.innerHeight - 1080 * s) / 2) + 'px';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  setInterval(function () {
+    // Nudge everything a few pixels every few minutes so nothing burns into the TV
+    $('wrap').style.transform = 'translate(' + (Math.round(Math.random() * 10) - 5) + 'px,' + (Math.round(Math.random() * 10) - 5) + 'px)';
+  }, 4 * 60 * 1000);
+
+  loadContent();
+  setInterval(tick, 1000);
+  setInterval(loadContent, 15 * 60 * 1000);
+  setInterval(loadWeather, 30 * 60 * 1000);
+  // Full reload early each morning to pick up any changes to the page itself
+  (function scheduleReload() {
+    var d = new Date(), next = new Date(d.getFullYear(), d.getMonth(), d.getDate() + (d.getHours() >= 6 ? 1 : 0), 6, 0, 0);
+    setTimeout(function () { location.reload(); }, next - d);
+  })();
+})();
+</script>
+</body>
+</html>
