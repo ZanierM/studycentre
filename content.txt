@@ -12,7 +12,7 @@ How to edit:
 Title | Year 12 Study Centre
 Subtitle | Mayfield Grammar School Sixth Form
 Weather place | Gravesend | 51.441 | 0.368
-Seconds per panel | 20
+Seconds per panel | 15
 Screen on from | 07:45
 Screen off after | 16:30
 
@@ -83,7 +83,7 @@ Please leave tables clear and chairs tucked in when you go.
 # ZONES
 (shown along the bottom of the screen)
 Silent Study (upstairs room): no talking, phones away, no audio
-Quiet Study Zone (downstairs, tables A–G): quiet voices, phones away, headphones OK
+Quiet Study Zone (tables A–G): quiet voices, phones away, headphones OK
 Break Space (downstairs sofa corner): break and lunch only, chat quietly, keep it tidy
 
 # MY TIPS
