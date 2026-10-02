@@ -30,8 +30,8 @@ Period 5 | 14:25 | 15:25
 # BELL TIMES FRIDAY
 Period 1 | 08:35 | 09:30
 Period 2 | 09:35 | 10:30
-Period 3 | 10:35 | 11:30
-Break | 11:30 | 11:55
+Break | 10:35 | 10:55
+Period 3 | 11:00 | 11:50
 Period 4 | 11:55 | 12:50
 Period 5 | 12:55 | 13:50
 
