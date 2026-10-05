@@ -82,19 +82,24 @@ body.offhours #off{display:block}
 body.offhours #wrap{display:none}
 #err{position:absolute;right:20px;top:160px;font-size:20px;color:var(--warn);display:none}
 
-/* Separate break/lunch view. The player is removed when the break ends. */
+/* Separate break/lunch view. Headlines rotate without an embedded video. */
 #breakPage{position:absolute;inset:0;display:none;background:var(--ink)}
 body.breakmode #wrap{display:none}
 body.breakmode #breakPage{display:block}
-#newsBox{position:absolute;left:60px;top:190px;width:1280px;height:720px;background:#15181f;border-radius:24px;overflow:hidden}
-#videoHost{position:absolute;inset:0;z-index:2}
-#videoHost iframe{width:100%;height:100%;border:0}
-#newsFallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:70px;text-align:center}
-#newsFallback h2{font-size:70px;line-height:1.1;margin:25px 0}
-#newsFallback p{font-size:32px;color:var(--muted);max-width:800px;line-height:1.4}
-#retryNews{margin-top:32px;border:0;border-radius:12px;padding:18px 32px;background:var(--plum);color:white;font:700 28px Calibri,Arial;cursor:pointer}
-#openSkyNews{display:inline-block;margin-top:22px;padding:18px 32px;border:2px solid var(--plum3);border-radius:12px;color:var(--lilac);font-size:28px;font-weight:700;text-decoration:none}
-#openSkyNews:hover,#openSkyNews:focus{background:var(--plum)}
+#newsBox{position:absolute;left:60px;top:190px;width:1280px;height:720px;display:flex;flex-direction:column;padding:52px 64px 44px;background:#15181f;border-radius:24px;overflow:hidden}
+.news-top,.news-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.news-top{color:var(--plum3);font-size:27px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+#newsFreshness{color:var(--muted);font-size:24px;letter-spacing:0;text-transform:none;text-align:right}
+#newsStoryLink{display:flex;flex:1;min-height:0;align-items:center;color:inherit;text-decoration:none;outline-offset:8px}
+#newsStoryLink:focus-visible{outline:4px solid var(--plum3);border-radius:12px}
+#newsStory{width:100%;transition:opacity .35s ease,transform .35s ease}
+#newsStory.changing{opacity:0;transform:translateY(-18px)}
+#newsTitle{max-width:1080px;font-size:72px;font-weight:700;line-height:1.11;letter-spacing:-1.5px}
+#newsSummary{max-width:1080px;margin-top:30px;color:#dcd6e6;font-size:34px;line-height:1.35}
+.news-bottom{padding-top:26px;border-top:1px solid rgba(255,255,255,.16);color:var(--muted);font-size:25px}
+#newsSource{color:var(--plum3);font-weight:700}
+#newsPosition{font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){#newsStory{transition:none}#newsStory.changing{opacity:1;transform:none}}
 .breakcard{position:absolute;left:1380px;width:480px;background:var(--ink2);border-radius:24px;padding:34px}
 #breakCountdownCard{top:190px;height:430px}
 #breakNextCard{top:650px;height:260px}
@@ -160,21 +165,22 @@ body.breakmode #breakPage{display:block}
       <div class="t2" id="breakSubtitle">Year 12 Study Centre</div>
       <div class="clock"><div class="time" id="breakTime">--:--</div><div class="date" id="breakDate"></div></div>
     </header>
-    <div id="newsBox">
-      <div id="newsFallback"><span class="kicker">Sky News · Live</span><h2>Take a break.<br>Stay informed.</h2><p id="newsMessage">Connecting to the live news stream…</p><button id="retryNews" type="button">Retry news</button><a id="openSkyNews" href="https://www.youtube.com/watch?v=xDWQ3LkccY8" target="_blank" rel="noopener">Open Sky News live ↗</a></div>
-      <div id="videoHost"></div>
+    <div id="newsBox" aria-label="Rotating BBC News headlines">
+      <div class="news-top"><span>News headlines</span><span id="newsFreshness">Loading headlines…</span></div>
+      <a id="newsStoryLink" href="https://www.bbc.co.uk/news" target="_blank" rel="noopener noreferrer"><div id="newsStory"><h2 id="newsTitle">Connecting to today’s news…</h2><p id="newsSummary">Stories will appear here during break and lunch.</p></div></a>
+      <div class="news-bottom"><span id="newsSource">BBC NEWS</span><span id="newsPosition"></span></div>
     </div>
     <div class="breakcard" id="breakCountdownCard"><div class="breaklabel" id="breakCountdownLabel">Break ends in</div><div id="breakRemaining">--:--</div><div id="breakEnd"></div><div id="breakProgress"><i id="breakBar"></i></div></div>
     <div class="breakcard" id="breakNextCard"><div class="breaklabel">Up next</div><div id="breakNext"></div><div id="breakNextStart"></div></div>
     <div class="breakcard" id="roomChanges"><div class="breaklabel">Room changes</div><p>Room change update coming soon, check room change board</p></div>
-    <footer><div id="newsStatus">Muted · English captions requested when available</div><div id="breakReminder">Break Space is open. Please leave it tidy.</div></footer>
+    <footer><div id="newsStatus">BBC News headlines · Stories change automatically</div><div id="breakReminder">Break Space is open. Please leave it tidy.</div></footer>
   </section>
 
   <div id="off"><div class="time" id="offTime">--:--</div><div class="msg" id="offMsg"></div><div class="sub" id="offSub"></div></div>
 </div>
 
 
-<nav id="testControls" aria-label="Test preview controls"><strong>TEST VERSION</strong><button data-mode="morning">Before school</button><button data-mode="break">Mon–Thu break</button><button data-mode="friday">Friday break</button><button data-mode="lunch">Lunch</button><button data-mode="end">Ends in 10 seconds</button><button data-mode="study">Study mode</button><button data-mode="real">Actual time</button><button id="hideControls">Hide controls</button><a class="testlink" href="https://www.youtube.com/watch?v=xDWQ3LkccY8" target="_blank" rel="noopener">Open Sky News live ↗</a></nav>
+<nav id="testControls" aria-label="Test preview controls"><strong>TEST VERSION</strong><button data-mode="morning">Before school</button><button data-mode="break">Mon–Thu break</button><button data-mode="friday">Friday break</button><button data-mode="lunch">Lunch</button><button data-mode="end">Ends in 10 seconds</button><button data-mode="study">Study mode</button><button data-mode="real">Actual time</button><button id="nextHeadline">Next headline</button><button id="hideControls">Hide controls</button></nav>
 <button id="restoreControls" type="button">Test controls</button>
 
 <script>
@@ -336,9 +342,8 @@ body.breakmode #breakPage{display:block}
   var previewMode = '';
   var testEnabled = /[?&]test(?:[=&]|$)/.test(location.search);
   $('testControls').style.display = testEnabled ? 'flex' : 'none';
-  var activeBreak = '', newsPlayer = null, newsLoading = false;
-  var apiTimeout = null, playbackTimeout = null, apiWaiting = false;
-  var newsVideoId = 'xDWQ3LkccY8';
+  var activeBreak = '', newsItems = [], newsIndex = 0, newsUpdatedAt = 0;
+  var newsTimer = null, newsTransition = null, lastNewsFetch = 0;
   function setTestMode(mode) {
     if (!C) return;
     var currentDate = now(), previousSlot = currentSlot(currentDate);
@@ -364,73 +369,99 @@ body.breakmode #breakPage{display:block}
   }
   var modeButtons = document.querySelectorAll('[data-mode]');
   for (var bi = 0; bi < modeButtons.length; bi++) modeButtons[bi].onclick = function () { setTestMode(this.getAttribute('data-mode')); };
+  $('nextHeadline').onclick = rotateNews;
   $('hideControls').onclick = function () { $('testControls').style.display = 'none'; $('restoreControls').style.display = 'block'; };
   $('restoreControls').onclick = function () { $('testControls').style.display = 'flex'; $('restoreControls').style.display = 'none'; };
   if (testEnabled && /[?&]controls=0/.test(location.search)) $('hideControls').onclick();
 
-  function newsFallback(message) {
-    clearTimeout(playbackTimeout);
-    $('newsMessage').textContent = message + (location.protocol === 'file:' ? ' For local testing, use Open Sky News live to watch in a separate tab. Turn on CC there if available.' : '');
-    $('videoHost').style.display = 'none';
-    $('newsStatus').textContent = 'Live news unavailable · The clock and countdown will continue';
+  function newsAgeOk(updatedAt) { return updatedAt && Date.now() - updatedAt < 72 * 60 * 60 * 1000; }
+  function newsUnavailable() {
+    $('newsTitle').textContent = 'Headlines are temporarily unavailable';
+    $('newsSummary').textContent = 'The clock and break countdown will continue as normal.';
+    $('newsStoryLink').removeAttribute('href');
+    $('newsFreshness').textContent = 'No recent update';
+    $('newsSource').textContent = 'NEWS';
+    $('newsPosition').textContent = '';
+    $('newsStatus').textContent = 'News unavailable · The rest of the display is unaffected';
+  }
+  function paintNews() {
+    if (!activeBreak) return;
+    if (!newsItems.length || !newsAgeOk(newsUpdatedAt)) { newsUnavailable(); return; }
+    var item = newsItems[newsIndex];
+    $('newsTitle').textContent = item.title;
+    $('newsTitle').style.fontSize = item.title.length > 120 ? '58px' : item.title.length > 85 ? '64px' : '72px';
+    $('newsSummary').textContent = item.summary;
+    $('newsStoryLink').href = item.link;
+    var date = new Date(newsUpdatedAt);
+    var label = date.toLocaleDateString('en-GB', {weekday:'short',day:'numeric',month:'short'});
+    var time = date.toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+    $('newsFreshness').textContent = (Date.now() - newsUpdatedAt > 24 * 60 * 60 * 1000 ? 'Latest available · ' : 'Updated ') + label + ' · ' + time;
+    $('newsSource').textContent = 'BBC NEWS';
+    $('newsPosition').textContent = (newsIndex + 1) + ' / ' + newsItems.length;
+    $('newsStatus').textContent = 'BBC News headlines · Stories change automatically';
+  }
+  function rotateNews() {
+    if (!activeBreak || newsItems.length < 2) return;
+    $('newsStory').className = 'changing';
+    newsTransition = setTimeout(function () {
+      newsIndex = (newsIndex + 1) % newsItems.length;
+      paintNews();
+      $('newsStory').className = '';
+    }, 350);
+  }
+  function startNewsRotation() {
+    clearInterval(newsTimer);
+    if (activeBreak && newsItems.length > 1) newsTimer = setInterval(rotateNews, 14000);
+  }
+  function acceptNews(data) {
+    var updatedAt = Date.parse(data && data.updatedAt);
+    var items = data && data.items;
+    if (!newsAgeOk(updatedAt) || !items || !items.length) return false;
+    var valid = [];
+    for (var i = 0; i < items.length && valid.length < 6; i++) {
+      var item = items[i];
+      if (item && item.title && /^https:\/\/www\.bbc\.co\.uk\/news\//.test(item.link || '')) valid.push({
+        title:String(item.title), summary:String(item.summary || ''), link:item.link
+      });
+    }
+    if (!valid.length) return false;
+    clearTimeout(newsTransition);
+    $('newsStory').className = '';
+    newsItems = valid; newsUpdatedAt = updatedAt; newsIndex = 0;
+    paintNews(); startNewsRotation();
+    return true;
+  }
+  function loadNews() {
+    if (!/^https?:$/.test(location.protocol)) return;
+    lastNewsFetch = Date.now();
+    var x = new XMLHttpRequest();
+    x.open('GET', 'news.json?t=' + lastNewsFetch, true);
+    x.onload = function () {
+      try {
+        if (x.status < 200 || x.status >= 300) throw new Error('News request failed');
+        var data = JSON.parse(x.responseText);
+        if (!acceptNews(data)) throw new Error('No recent headlines');
+        try { localStorage.setItem('study-centre-news', x.responseText); } catch (e) {}
+      } catch (e) { useCachedNews(); }
+    };
+    x.onerror = useCachedNews;
+    x.send();
+  }
+  function useCachedNews() {
+    try { if (acceptNews(JSON.parse(localStorage.getItem('study-centre-news') || 'null'))) return; } catch (e) {}
+    if (activeBreak) newsUnavailable();
   }
   function stopNews() {
     activeBreak = '';
-    clearTimeout(playbackTimeout);
-    clearTimeout(apiTimeout);
-    if (newsPlayer && newsPlayer.destroy) { try { newsPlayer.destroy(); } catch (e) {} }
-    newsPlayer = null; newsLoading = false;
-    $('videoHost').innerHTML = '';
-  }
-  function launchPlayer() {
-    if (!activeBreak || newsPlayer || !window.YT || !YT.Player) return;
-    clearTimeout(apiTimeout);
-    newsLoading = false;
-    $('videoHost').style.display = 'block';
-    $('videoHost').innerHTML = '<div id="ytNews"></div>';
-    $('newsStatus').textContent = 'Connecting to Sky News · Muted · English captions requested';
-    var vars = {autoplay:1, controls:1, playsinline:1, cc_load_policy:1, cc_lang_pref:'en', hl:'en', rel:0};
-    if (/^https?:$/.test(location.protocol)) vars.origin = location.protocol + '//' + location.host;
-    newsPlayer = new YT.Player('ytNews', {
-      width:1280, height:720, videoId:setting('break news video', 0, newsVideoId), playerVars:vars,
-      events:{
-        onReady:function(e) {
-          if (!activeBreak) return;
-          e.target.mute(); e.target.playVideo();
-        },
-        onStateChange:function(e) {
-          if (!activeBreak) return;
-          if (e.data === 1) { clearTimeout(playbackTimeout); $('newsStatus').textContent = 'Sky News · Live · Muted · English captions requested when available'; }
-          if (e.data === 0) newsFallback('The live stream has ended. The clock and countdown are still running.');
-        },
-        onAutoplayBlocked:function() {
-          $('newsStatus').textContent = 'Playback needs a click · Press Play in the video · Captions requested';
-          clearTimeout(playbackTimeout);
-        },
-        onError:function() { newsFallback('The stream cannot play here. Check the connection, YouTube access or the current live-stream link.'); }
-      }
-    });
-    playbackTimeout = setTimeout(function () { if (activeBreak) newsFallback('News has not started. Press Retry news, or check YouTube access on this screen.'); }, 20000);
+    clearInterval(newsTimer);
+    clearTimeout(newsTransition);
+    $('newsStory').className = '';
   }
   function startNews() {
-    if (!activeBreak || newsPlayer || newsLoading) return;
-    $('newsMessage').textContent = 'Connecting to the live news stream…';
-    $('videoHost').style.display = 'none';
-    if (window.YT && YT.Player) { launchPlayer(); return; }
-    newsLoading = true;
-    window.onYouTubeIframeAPIReady = function () { apiWaiting = false; newsLoading = false; launchPlayer(); };
-    if (!apiWaiting) {
-      apiWaiting = true;
-      var previous = document.getElementById('youtubeApi');
-      if (previous) previous.parentNode.removeChild(previous);
-      var script = document.createElement('script'); script.id = 'youtubeApi';
-      script.src = 'https://www.youtube.com/iframe_api';
-      script.onerror = function () { apiWaiting = false; newsLoading = false; newsFallback('YouTube could not load. The school network may block it.'); };
-      document.head.appendChild(script);
-    }
-    apiTimeout = setTimeout(function () { newsLoading = false; apiWaiting = false; if (activeBreak) newsFallback('YouTube is not responding. You can still use the clock and countdown.'); }, 12000);
+    if (!activeBreak) return;
+    paintNews(); startNewsRotation();
+    if (Date.now() - lastNewsFetch > 10 * 60 * 1000) loadNews();
   }
-  $('retryNews').onclick = function () { var key = activeBreak; stopNews(); activeBreak = key; startNews(); };
   function updateBreak(d, slot, school, offhours) {
     var wasBreak = !!activeBreak;
     var beforeSchool = slot.kind === 'before';
@@ -709,9 +740,11 @@ body.breakmode #breakPage{display:block}
   tick();
   loadContent();
   loadWeather();
+  loadNews();
   setInterval(tick, 1000);
   setInterval(loadContent, 15 * 60 * 1000);
   setInterval(loadWeather, 30 * 60 * 1000);
+  setInterval(loadNews, 10 * 60 * 1000);
   // Full reload early each morning to pick up any changes to the page itself
   (function scheduleReload() {
     var d = new Date(), next = new Date(d.getFullYear(), d.getMonth(), d.getDate() + (d.getHours() >= 6 ? 1 : 0), 6, 0, 0);
