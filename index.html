@@ -44,7 +44,9 @@ header .date{font-size:26px;color:var(--plum3);margin-top:4px}
 .try b{color:var(--plum3)}
 .tool-heading{font-size:68px;font-weight:700;line-height:1.1;margin-bottom:30px}
 .tool-row{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:center;min-height:166px;padding:22px 0;border-top:1px solid rgba(255,255,255,.16)}
-.tool-name{font-size:52px;font-weight:700;color:var(--plum3)}
+.tool-brand{display:flex;align-items:center;gap:18px;min-width:0}
+.tool-brand img{width:72px;height:72px;flex:none;object-fit:contain;border-radius:12px}
+.tool-name{font-size:44px;font-weight:700;color:var(--plum3);white-space:nowrap}
 .tool-use{font-size:36px;line-height:1.25;color:var(--lilac)}
 #dots{position:absolute;right:44px;top:62px}
 #dots i{display:inline-block;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);margin-right:12px}
@@ -697,12 +699,12 @@ body.breakmode #breakPage{display:block}
 
   function panelRevisionTools() {
     var tools = [
-      ['Gizmo', 'Turn your notes into flashcards and quiz yourself regularly.'],
-      ['Forge', 'Answer GCSE or A-level questions, learn from a mistake, then try a fresh question to check the fix.'],
-      ['Up Learn', 'Use A-level videos and quizzes to work through a topic and check your understanding.']
+      ['Gizmo', 'assets/gizmo-logo.svg', 'Turn your notes into flashcards and quiz yourself regularly.'],
+      ['Forge', 'assets/forge-logo.png', 'Use exam questions and revision cards to find gaps, learn from mistakes and check what sticks.'],
+      ['Up Learn', 'assets/uplearn-logo.png', 'Use A-level videos and quizzes to work through a topic and check your understanding.']
     ];
     return '<div class="tool-heading">Revision tools</div>' + tools.map(function (tool) {
-      return '<div class="tool-row"><div class="tool-name">' + esc(tool[0]) + '</div><div class="tool-use">' + esc(tool[1]) + '</div></div>';
+      return '<div class="tool-row"><div class="tool-brand"><img src="' + tool[1] + '" alt=""><div class="tool-name">' + esc(tool[0]) + '</div></div><div class="tool-use">' + esc(tool[2]) + '</div></div>';
     }).join('');
   }
 
