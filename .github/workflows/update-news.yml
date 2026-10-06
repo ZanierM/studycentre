@@ -2,8 +2,9 @@ name: Refresh Study Centre news
 
 on:
   schedule:
-    # Four school-day checks; GitHub's scheduler may start a little later.
-    - cron: '17 6,8,12,15 * * 1-5'
+    # Several morning attempts, since GitHub may delay or omit individual runs.
+    - cron: '7,27,47 5-8 * * 1-5'
+    - cron: '17 10,12,15 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch BBC headlines
+      - name: Fetch mixed-source headlines
         run: python3 scripts/update_news.py
       - name: Save headlines
         id: save
