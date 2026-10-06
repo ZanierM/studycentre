@@ -13,11 +13,11 @@ A display for the TV in the Year 12 Study Centre. It runs by itself and needs no
 
 **Outside school hours** (before 07:45, after 16:30, at weekends, on holidays and development days) it shows a dim clock with "See you tomorrow" or "Enjoy the holiday! Back in school on …".
 
-**At break and lunch**, the video-free news card rotates BBC News headlines every 14 seconds. The current story can be opened from the card. The screen reads `news.json` from this same site, so the display device does not need access to YouTube or a third-party news API. A scheduled GitHub Action refreshes the file four times on school days; the displayed timestamp makes delayed updates clear. The screen can use a recent local copy if a request fails and shows a neutral unavailable message if that copy is too old.
+**At break and lunch**, the video-free news card rotates BBC News and Sky News headlines every 14 seconds. The current story can be opened from the card. Where supplied by the publisher's RSS feed, its thumbnail appears beside the headline; the text remains readable if an image is blocked. The screen normally reads `news.json` from this same site. A scheduled GitHub Action checks repeatedly on school mornings and again later in the day. If the published news is more than three hours old, the screen also attempts to refresh directly through the RSS2JSON service. If that service is blocked, it retains the latest available news and shows its timestamp. Headlines older than 72 hours are not displayed.
 
 ## Editing the content
 
-School information is in **`content.txt`**. You edit it on the GitHub website: open the file, click the pencil icon, make your change, then click **Commit changes**. The screen picks up changes within 15 minutes. BBC headlines are updated automatically in `news.json`.
+School information is in **`content.txt`**. You edit it on the GitHub website: open the file, click the pencil icon, make your change, then click **Commit changes**. The screen picks up changes within 15 minutes. News headlines are updated automatically in `news.json`.
 
 - Bell times, term dates, countdowns, support contacts, notices and zone reminders are all in that file, with instructions at the top.
 - The next countdown is always the big number. Marking one `big` (like the Prep Exams) keeps it listed underneath even when it's months away.
@@ -40,7 +40,7 @@ School information is in **`content.txt`**. You edit it on the GitHub website: o
 
 ## Notes for IT
 
-- It's a single static web page with no login, cookies or tracking. The screen itself requests only its own site and weather from api.open-meteo.com; a GitHub Action fetches the BBC feed separately.
+- It's a single static web page with no login, cookies or tracking. The screen requests its own site and weather from api.open-meteo.com. When published headlines are stale, it may also request BBC and Sky feeds through api.rss2json.com. Publisher thumbnails load from BBC or Sky image hosts; if these are blocked, the card remains text-only.
 - Open the address full screen. On a PC use Chrome or Edge kiosk mode, e.g. `msedge --kiosk <url> --edge-kiosk-type=fullscreen`. On a smart TV, use the built-in browser's full-screen option. On a signage player, add it as a web page or URL item.
 - It's designed at 1920×1080 and scales to fit any screen size. It's lightweight enough for smart-TV browsers.
 - It reloads itself at 06:00 every day and checks for content changes every 15 minutes. If the network drops, it keeps showing what it has.
