@@ -92,10 +92,13 @@ body.breakmode #breakPage{display:block}
 #newsFreshness{color:var(--muted);font-size:24px;letter-spacing:0;text-transform:none;text-align:right}
 #newsStoryLink{display:flex;flex:1;min-height:0;align-items:center;color:inherit;text-decoration:none;outline-offset:8px}
 #newsStoryLink:focus-visible{outline:4px solid var(--plum3);border-radius:12px}
-#newsStory{width:100%;transition:opacity .35s ease,transform .35s ease}
+#newsStory{width:100%;display:flex;align-items:center;gap:36px;transition:opacity .35s ease,transform .35s ease}
 #newsStory.changing{opacity:0;transform:translateY(-18px)}
-#newsTitle{max-width:1080px;font-size:72px;font-weight:700;line-height:1.11;letter-spacing:-1.5px}
-#newsSummary{max-width:1080px;margin-top:30px;color:#dcd6e6;font-size:34px;line-height:1.35}
+.news-copy{flex:1;min-width:0}
+#newsStoryImage{display:none;width:380px;height:270px;flex:none;object-fit:cover;border-radius:12px}
+#newsStory.has-image #newsStoryImage{display:block}
+#newsTitle{font-size:72px;font-weight:700;line-height:1.11;letter-spacing:-1.5px;overflow-wrap:break-word}
+#newsSummary{margin-top:30px;color:#dcd6e6;font-size:34px;line-height:1.35}
 .news-bottom{padding-top:26px;border-top:1px solid rgba(255,255,255,.16);color:var(--muted);font-size:25px}
 #newsSource{color:var(--plum3);font-weight:700}
 #newsPosition{font-variant-numeric:tabular-nums}
@@ -165,15 +168,15 @@ body.breakmode #breakPage{display:block}
       <div class="t2" id="breakSubtitle">Year 12 Study Centre</div>
       <div class="clock"><div class="time" id="breakTime">--:--</div><div class="date" id="breakDate"></div></div>
     </header>
-    <div id="newsBox" aria-label="Rotating BBC News headlines">
+    <div id="newsBox" aria-label="Rotating news headlines">
       <div class="news-top"><span>News headlines</span><span id="newsFreshness">Loading headlines…</span></div>
-      <a id="newsStoryLink" href="https://www.bbc.co.uk/news" target="_blank" rel="noopener noreferrer"><div id="newsStory"><h2 id="newsTitle">Connecting to today’s news…</h2><p id="newsSummary">Stories will appear here during break and lunch.</p></div></a>
-      <div class="news-bottom"><span id="newsSource">BBC NEWS</span><span id="newsPosition"></span></div>
+      <a id="newsStoryLink" href="https://www.bbc.co.uk/news" target="_blank" rel="noopener noreferrer"><div id="newsStory"><div class="news-copy"><h2 id="newsTitle">Connecting to today’s news…</h2><p id="newsSummary">Stories will appear here during break and lunch.</p></div><img id="newsStoryImage" alt="" referrerpolicy="no-referrer"></div></a>
+      <div class="news-bottom"><span id="newsSource">NEWS</span><span id="newsPosition"></span></div>
     </div>
     <div class="breakcard" id="breakCountdownCard"><div class="breaklabel" id="breakCountdownLabel">Break ends in</div><div id="breakRemaining">--:--</div><div id="breakEnd"></div><div id="breakProgress"><i id="breakBar"></i></div></div>
     <div class="breakcard" id="breakNextCard"><div class="breaklabel">Up next</div><div id="breakNext"></div><div id="breakNextStart"></div></div>
     <div class="breakcard" id="roomChanges"><div class="breaklabel">Room changes</div><p>Room change update coming soon, check room change board</p></div>
-    <footer><div id="newsStatus">BBC News headlines · Stories change automatically</div><div id="breakReminder">Break Space is open. Please leave it tidy.</div></footer>
+    <footer><div id="newsStatus">News headlines · Stories change automatically</div><div id="breakReminder">Break Space is open. Please leave it tidy.</div></footer>
   </section>
 
   <div id="off"><div class="time" id="offTime">--:--</div><div class="msg" id="offMsg"></div><div class="sub" id="offSub"></div></div>
@@ -343,7 +346,8 @@ body.breakmode #breakPage{display:block}
   var testEnabled = /[?&]test(?:[=&]|$)/.test(location.search);
   $('testControls').style.display = testEnabled ? 'flex' : 'none';
   var activeBreak = '', newsItems = [], newsIndex = 0, newsUpdatedAt = 0;
-  var newsTimer = null, newsTransition = null, lastNewsFetch = 0;
+  var newsTimer = null, newsTransition = null, lastNewsFetch = 0, lastFeedFetch = 0;
+  var newsSources = { 'BBC News': /^https:\/\/www\.bbc\.co\.uk\/news\//, 'Sky News': /^https:\/\/news\.sky\.com\// };
   function setTestMode(mode) {
     if (!C) return;
     var currentDate = now(), previousSlot = currentSlot(currentDate);
@@ -381,6 +385,7 @@ body.breakmode #breakPage{display:block}
     $('newsStoryLink').removeAttribute('href');
     $('newsFreshness').textContent = 'No recent update';
     $('newsSource').textContent = 'NEWS';
+    $('newsStory').classList.remove('has-image');
     $('newsPosition').textContent = '';
     $('newsStatus').textContent = 'News unavailable · The rest of the display is unaffected';
   }
@@ -392,13 +397,16 @@ body.breakmode #breakPage{display:block}
     $('newsTitle').style.fontSize = item.title.length > 120 ? '58px' : item.title.length > 85 ? '64px' : '72px';
     $('newsSummary').textContent = item.summary;
     $('newsStoryLink').href = item.link;
+    $('newsStory').classList.remove('has-image');
+    $('newsStoryImage').removeAttribute('src');
+    if (item.image && /^https:\/\//.test(item.image)) $('newsStoryImage').src = item.image;
     var date = new Date(newsUpdatedAt);
     var label = date.toLocaleDateString('en-GB', {weekday:'short',day:'numeric',month:'short'});
     var time = date.toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
     $('newsFreshness').textContent = (Date.now() - newsUpdatedAt > 24 * 60 * 60 * 1000 ? 'Latest available · ' : 'Updated ') + label + ' · ' + time;
-    $('newsSource').textContent = 'BBC NEWS';
+    $('newsSource').textContent = (item.source || 'BBC News').toUpperCase();
     $('newsPosition').textContent = (newsIndex + 1) + ' / ' + newsItems.length;
-    $('newsStatus').textContent = 'BBC News headlines · Stories change automatically';
+    $('newsStatus').textContent = 'BBC News + Sky News · Stories change automatically';
   }
   function rotateNews() {
     if (!activeBreak || newsItems.length < 2) return;
@@ -420,8 +428,10 @@ body.breakmode #breakPage{display:block}
     var valid = [];
     for (var i = 0; i < items.length && valid.length < 6; i++) {
       var item = items[i];
-      if (item && item.title && /^https:\/\/www\.bbc\.co\.uk\/news\//.test(item.link || '')) valid.push({
-        title:String(item.title), summary:String(item.summary || ''), link:item.link
+      var source = item && (item.source || 'BBC News');
+      if (item && item.title && newsSources[source] && newsSources[source].test(item.link || '')) valid.push({
+        title:String(item.title), summary:String(item.summary || ''), link:item.link,
+        source:source, image: /^https:\/\//.test(item.image || '') ? item.image : ''
       });
     }
     if (!valid.length) return false;
@@ -442,15 +452,56 @@ body.breakmode #breakPage{display:block}
         var data = JSON.parse(x.responseText);
         if (!acceptNews(data)) throw new Error('No recent headlines');
         try { localStorage.setItem('study-centre-news', x.responseText); } catch (e) {}
-      } catch (e) { useCachedNews(); }
+        if (Date.now() - newsUpdatedAt > 3 * 60 * 60 * 1000) loadDirectFeeds();
+      } catch (e) { useCachedNews(); loadDirectFeeds(); }
     };
-    x.onerror = useCachedNews;
+    x.onerror = function () { useCachedNews(); loadDirectFeeds(); };
     x.send();
   }
   function useCachedNews() {
     try { if (acceptNews(JSON.parse(localStorage.getItem('study-centre-news') || 'null'))) return; } catch (e) {}
     if (activeBreak) newsUnavailable();
   }
+  function loadDirectFeeds() {
+    if (Date.now() - lastFeedFetch < 30 * 60 * 1000) return;
+    lastFeedFetch = Date.now();
+    var feeds = [
+      { source:'BBC News', url:'https://feeds.bbci.co.uk/news/uk/rss.xml' },
+      { source:'Sky News', url:'https://feeds.skynews.com/feeds/rss/home.xml' }
+    ];
+    var results = [[], []], completed = 0;
+    function finish() {
+      completed++;
+      if (completed !== feeds.length) return;
+      var merged = [];
+      for (var i = 0; i < 3; i++) for (var j = 0; j < results.length; j++) if (results[j][i]) merged.push(results[j][i]);
+      if (merged.length < 3) return;
+      var data = { updatedAt:new Date().toISOString(), items:merged };
+      if (acceptNews(data)) try { localStorage.setItem('study-centre-news', JSON.stringify(data)); } catch (e) {}
+    }
+    feeds.forEach(function (feed, index) {
+      var x = new XMLHttpRequest();
+      x.open('GET', 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed.url), true);
+      x.timeout = 12000;
+      x.onload = function () {
+        try {
+          var data = JSON.parse(x.responseText);
+          if (x.status !== 200 || data.status !== 'ok') throw new Error('Feed unavailable');
+          (data.items || []).forEach(function (item) {
+            if (results[index].length >= 3 || !item.title || !newsSources[feed.source].test(item.link || '')) return;
+            var summary = new DOMParser().parseFromString(item.description || '', 'text/html').body.textContent || '';
+            results[index].push({ title:item.title, summary:summary.trim().slice(0, 190),
+              link:item.link, source:feed.source, image:/^https:\/\//.test(item.thumbnail || '') ? item.thumbnail : '' });
+          });
+        } catch (e) {}
+        finish();
+      };
+      x.onerror = x.ontimeout = finish;
+      x.send();
+    });
+  }
+  $('newsStoryImage').onload = function () { $('newsStory').classList.add('has-image'); };
+  $('newsStoryImage').onerror = function () { $('newsStory').classList.remove('has-image'); };
   function stopNews() {
     activeBreak = '';
     clearInterval(newsTimer);

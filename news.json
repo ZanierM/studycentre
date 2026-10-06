@@ -1,35 +1,47 @@
 {
-  "updatedAt": "2026-10-06T13:15:59+00:00",
+  "updatedAt": "2026-10-06T16:13:38+00:00",
   "items": [
     {
-      "title": "Tories pledge £10bn for British anti-missile defence system",
-      "summary": "The Conservatives say their plan would protect the UK at a time when Nato allies have warned of Russian drone incursions.",
-      "link": "https://www.bbc.co.uk/news/articles/cxvgdl5npl86o?at_medium=RSS&at_campaign=rss"
+      "title": "British national arrested in connection with RAF Fairford incident",
+      "summary": "It is the seventh arrest in connection to the incident near RAF Fairford last month.",
+      "link": "https://www.bbc.co.uk/news/articles/cqlye0xd72wdo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b53/live/fc7bdb70-bf15-11f1-9947-0584c244b963.jpg"
+    },
+    {
+      "title": "Police make further arrest over RAF Fairford incident",
+      "summary": "Counter terror police have made a seventh arrest in connection with an incident which took place close to RAF Fairford on 27 September.",
+      "link": "https://news.sky.com/story/police-make-further-arrest-over-raf-fairford-incident-13595771",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/09/1920x1080/skynews-fairford-raf-police_7363058.jpg?20260928091929"
+    },
+    {
+      "title": "I'd rather have another election than do a deal with Reform UK, says Badenoch",
+      "summary": "The Conservative Party leader also pledged to cut the cost of hiring 21 to 24 year olds.",
+      "link": "https://www.bbc.co.uk/news/articles/c9x28ljj34lxo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c210/live/0bb4e720-c19c-11f1-a64c-550be9e3c66b.jpg"
+    },
+    {
+      "title": "Forensics student admits 'Dexter-style' murder in 'kill room'",
+      "summary": "A forensics student who was obsessed with US TV drama Dexter has pleaded guilty to murdering a sex worker in a \"kill room\" set up inside an Airbnb.",
+      "link": "https://news.sky.com/story/forensic-student-admits-dexter-style-murder-in-kill-room-13595603",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-wolverhampton-crown_7369807.jpg?20261006155110"
     },
     {
       "title": "Rise in babies in care proceedings raises fears of unnecessary adoptions, experts tell BBC",
       "summary": "With better support, many babies may not have needed to go into care, File on 4 Investigates is told.",
-      "link": "https://www.bbc.co.uk/news/articles/c52e9k3998e7o?at_medium=RSS&at_campaign=rss"
+      "link": "https://www.bbc.co.uk/news/articles/c52e9k3998e7o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3c13/live/c0c73a70-c01e-11f1-a64c-550be9e3c66b.jpg"
     },
     {
-      "title": "I had to crawl on my hands and knees to get off train, says disabled woman",
-      "summary": "Phoebe's mum says watching the incident was \"traumatic\" and left her feeling \"helpless\".",
-      "link": "https://www.bbc.co.uk/news/articles/c5gmr3dl2lp4o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "title": "Childminder who left 27 children alone in her home pleads guilty to neglect",
-      "summary": "Amanda Mathewson, 55, pleaded guilty to neglect and abandoning children in her care at Kirkcaldy Sheriff Court.",
-      "link": "https://www.bbc.co.uk/news/articles/cr9dzljq56ejo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "title": "One million UK people who have never smoked are now vaping",
-      "summary": "Latest statistics also show, for the second year in a row, more over-16s vape than smoke.",
-      "link": "https://www.bbc.co.uk/news/articles/cwe8ldgzj277o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "title": "Woman found dead in home named as GP",
-      "summary": "Dr Hannah Terry was working as a GP at a nearby practice, which has been closed since the weekend.",
-      "link": "https://www.bbc.co.uk/news/articles/cx4g1z2ydqp4o?at_medium=RSS&at_campaign=rss"
+      "title": "PCs sacked after 92-year-old tasered and pepper sprayed in care home",
+      "summary": "Two officers have been sacked for gross misconduct after using a Taser and pepper spray on a 92-year-old amputee, the police watchdog has said.",
+      "link": "https://news.sky.com/story/two-officers-sacked-after-92-year-old-man-tasered-and-pepper-sprayed-in-care-home-police-watchdog-says-13595825",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/24/04/1920x1080/skynews-crime-east-sussex-police_6533076.jpg?20250528152615"
     }
   ]
 }
