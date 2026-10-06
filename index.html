@@ -42,6 +42,10 @@ header .date{font-size:26px;color:var(--plum3);margin-top:4px}
 .today{color:var(--warn)}
 .try{margin-top:34px;padding:26px 30px;border-left:8px solid var(--plum2);background:rgba(140,99,160,.14);border-radius:0 18px 18px 0;font-size:34px;line-height:1.4}
 .try b{color:var(--plum3)}
+.tool-heading{font-size:68px;font-weight:700;line-height:1.1;margin-bottom:30px}
+.tool-row{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:center;min-height:166px;padding:22px 0;border-top:1px solid rgba(255,255,255,.16)}
+.tool-name{font-size:52px;font-weight:700;color:var(--plum3)}
+.tool-use{font-size:36px;line-height:1.25;color:var(--lilac)}
 #dots{position:absolute;right:44px;top:62px}
 #dots i{display:inline-block;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18);margin-right:12px}
 #dots i.on{background:var(--plum3)}
@@ -691,6 +695,17 @@ body.breakmode #breakPage{display:block}
       (t[2] ? '<div class="try"><b>Try this now:</b> ' + esc(t[2]) + '</div>' : '');
   }
 
+  function panelRevisionTools() {
+    var tools = [
+      ['Gizmo', 'Turn your notes into flashcards and quiz yourself regularly.'],
+      ['Forge', 'Answer GCSE or A-level questions, learn from a mistake, then try a fresh question to check the fix.'],
+      ['Up Learn', 'Use A-level videos and quizzes to work through a topic and check your understanding.']
+    ];
+    return '<div class="tool-heading">Revision tools</div>' + tools.map(function (tool) {
+      return '<div class="tool-row"><div class="tool-name">' + esc(tool[0]) + '</div><div class="tool-use">' + esc(tool[1]) + '</div></div>';
+    }).join('');
+  }
+
   var qIdx = 0;
   function panelThought() {
     var all = C.quotes.length ? C.quotes.concat(THOUGHTS) : THOUGHTS;
@@ -711,7 +726,7 @@ body.breakmode #breakPage{display:block}
     return '<span class="kicker">Notices</span>' + C.notices.slice(0, 5).map(function (n) { return '<div class="p" style="font-size:44px;color:var(--lilac);margin-top:34px">' + esc(n) + '</div>'; }).join('');
   }
 
-  var BUILDERS = [panelCountdown, panelTip, panelSupport, panelThought, panelNotices];
+  var BUILDERS = [panelCountdown, panelTip, panelRevisionTools, panelSupport, panelThought, panelNotices];
   function buildPanels(keepPlace) {
     // Panels are rebuilt each rotation so countdowns and dates stay current
     if (!keepPlace) { idx = -1; rotate(); clearInterval(rotTimer); rotTimer = setInterval(rotate, (+setting('seconds per panel', 0, '20') || 20) * 1000); }

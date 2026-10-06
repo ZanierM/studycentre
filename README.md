@@ -9,7 +9,7 @@ A display for the TV in the Year 12 Study Centre. It runs by itself and needs no
 - **Break Space:** shows Open at break and lunch and Closed at all other times, with when it next opens.
 - **Along the bottom:** zone reminders and notices, plus the Gravesend weather, including whether rain is likely later.
 
-**Panels that rotate every 20 seconds:** countdowns, the study technique of the day, who can help, a thought for the day, and notices.
+**Panels that rotate every 15 seconds:** countdowns, the study technique of the day, revision tools, who can help, a thought for the day, and notices.
 
 **Outside school hours** (before 07:45, after 16:30, at weekends, on holidays and development days) it shows a dim clock with "See you tomorrow" or "Enjoy the holiday! Back in school on …".
 
