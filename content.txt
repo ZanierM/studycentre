@@ -18,7 +18,7 @@ Screen off after | 16:30
 
 # BELL TIMES MON-THU
 (name | start | end). Anything called Break or Lunch opens the Break Space.
-Registration | 08:35 | 08:50
+Form time | 08:30 | 08:50
 Period 1 | 08:55 | 09:55
 Break | 09:55 | 10:15
 Period 2 | 10:15 | 11:15
@@ -69,7 +69,7 @@ listed underneath too, even when it's months away.)
 
 # SUPPORT
 (who | where or when). Shown on the "Who can help?" panel.
-Your form tutor | Every morning in registration
+Your form tutor | Every morning in form time
 Mr Zanier, Learning Leader Year 12 | Sixth Form Office
 Mrs Murfet, Head of Sixth Form | Sixth Form Office
 Mrs Dowle, Pastoral Support Manager | Sixth Form Office
