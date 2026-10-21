@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-10-21T10:01:44+00:00",
+  "updatedAt": "2026-10-21T15:17:53+00:00",
   "items": [
+    {
+      "title": "Jailed former DUP leader Jeffrey Donaldson being investigated over alleged rape inside Parliament",
+      "summary": "While not naming the disgraced former MP, the Metropolitan Police has issued a statement confirming a 63-year-old man is being investigated.",
+      "link": "https://www.bbc.co.uk/news/articles/c94g1pjmxg0ko?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/30ee/live/45d91a50-cd5b-11f1-b962-b7ff822cde72.jpg"
+    },
+    {
+      "title": "Jailed former DUP leader Jeffrey Donaldson accused of raping woman inside Westminster - reports",
+      "summary": "Police are investigating former DUP leader Jeffrey Donaldson over an allegation that he raped a woman in the Houses of Parliament, the PA news agency reports.",
+      "link": "https://news.sky.com/story/jailed-former-dup-leader-jeffrey-donaldson-accused-of-raping-woman-inside-westminster-reports-13601867",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-jeffrey-donaldson-dup_7377456.jpg?20261015113626"
+    },
     {
       "title": "Lawyer caught offering to make illegal-worker fine go away",
       "summary": "Because of our investigation, the home secretary has ordered a review of how fines are issued and collected.",
@@ -9,39 +23,25 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2f00/live/823692f0-cca9-11f1-bc2e-018d645d8d21.jpg"
     },
     {
-      "title": "Man arrested in Pakistan over $126m counterfeit postage scheme",
-      "summary": "A man has been arrested in Pakistan and accused of running a counterfeit postage operation costing the US Postal Service $126m (£94m).",
-      "link": "https://news.sky.com/story/man-arrested-in-pakistan-over-126m-counterfeit-postage-scheme-13601790",
+      "title": "Websites across Europe go offline after warning issued for critical software update",
+      "summary": "Organisations unable to apply key fixes to widely used software should consider taking their websites down, UK and international cybersecurity officials have warned.",
+      "link": "https://news.sky.com/story/websites-warned-to-install-critical-php-software-update-or-go-offline-13601917",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-postalservice-colorado_7382581.jpg?20261021081232"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-ha-hacker-computer_7382912.jpg?20261021145111"
     },
     {
-      "title": "Giant tunnel proposed to clean up Windermere's sewage problem",
-      "summary": "The plan would eliminate sewage spills into Windermere, blamed for turning the water green.",
-      "link": "https://www.bbc.co.uk/news/articles/cr5yn4pky527o?at_medium=RSS&at_campaign=rss",
+      "title": "Teenage boy guilty of trying to murder girl, 15, in school",
+      "summary": "The school went into lockdown and parents gathered at the gates as they waited for news about their children.",
+      "link": "https://www.bbc.co.uk/news/articles/cm0j0q9znzdlo?at_medium=RSS&at_campaign=rss",
       "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/66fa/live/87e7d560-cc9f-11f1-bc2e-018d645d8d21.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f353/live/8094ace0-1d5c-11f1-b048-c9424b2cf5fd.jpg"
     },
     {
-      "title": "Uganda reacts angrily as Nigeria confirms its first Ebola case",
-      "summary": "Nigeria has recorded its first case of Ebola during the current outbreak, the country's health ministry has said - as the virus continues to spread internationally.",
-      "link": "https://news.sky.com/story/nigeria-confirms-ebola-case-as-outbreak-continues-to-spread-13601748",
+      "title": "Three more people arrested over death of Manchester woman",
+      "summary": "Three more people have been arrested over the death of Alisha Samuels in Manchester.",
+      "link": "https://news.sky.com/story/three-more-people-arrested-over-death-of-manchester-woman-13601887",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/08/1920x1080/skynews-ebola-congo_7323686.jpg?20260816231920"
-    },
-    {
-      "title": "Man charged after three Jewish women assaulted",
-      "summary": "The women suffered minor injuries when they were assaulted at Clapton Common, police say.",
-      "link": "https://www.bbc.co.uk/news/articles/c60rl0vdr87eo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/451f/live/675a70d0-cc01-11f1-9a39-31b474234113.png"
-    },
-    {
-      "title": "Exceeding key climate target is now 'imminent and unavoidable'",
-      "summary": "Exceeding a key global climate target is now \"imminent and unavoidable\", United Nations (UN) scientists have warned.",
-      "link": "https://news.sky.com/story/britain-woefully-unprepared-to-tackle-wildfires-and-needs-new-fire-fighting-planes-and-bbq-bans-needed-mps-warn-13601469",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/08/1920x1080/skynews-west-midlands-fire_7320879.jpg?20260813181110"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-alisha-samuel-manchester_7378025.jpg?20261016082512"
     }
   ]
 }
