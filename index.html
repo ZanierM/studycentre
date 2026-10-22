@@ -292,7 +292,27 @@ body.breakmode #breakPage{display:block}
     while (pv.getDay() === 0 || pv.getDay() === 6) pv.setDate(pv.getDate() + 1);
     pv.setHours(10, 30, 0, 0); fakeStart = pv.getTime();
   }
-  function now() { return fakeStart ? new Date(fakeStart + (Date.now() - realStart)) : new Date(); }
+  var clockOffsetMs = 0;
+  function now() { return fakeStart ? new Date(fakeStart + (Date.now() - realStart)) : new Date(Date.now() + clockOffsetMs); }
+  // The classroom screen's device clock may drift. Use a fresh same-origin
+  // response to correct it; keep the device time if the network is unavailable.
+  function syncClock() {
+    if (fakeStart) return; // ?now= and ?preview deliberately simulate time.
+    var startedAt = Date.now(), startedMonotonic = performance.now();
+    var x = new XMLHttpRequest();
+    x.open('HEAD', 'content.txt?clock=' + startedAt, true);
+    x.setRequestHeader('Cache-Control', 'no-cache');
+    x.timeout = 5000;
+    x.onload = function () {
+      var elapsed = performance.now() - startedMonotonic;
+      var serverTime = Date.parse(x.getResponseHeader('Date') || '');
+      var age = +(x.getResponseHeader('Age') || 0);
+      if (x.status !== 200 || !isFinite(serverTime) || elapsed > 3000 || age > 0) return;
+      clockOffsetMs = serverTime + 500 - (startedAt + elapsed / 2);
+      tick();
+    };
+    x.send();
+  }
 
   // ================= content.txt =================
   var C = null;
@@ -808,10 +828,12 @@ body.breakmode #breakPage{display:block}
   C = parseContent(EMBEDDED_CONTENT);
   buildPanels();
   tick();
+  syncClock();
   loadContent();
   loadWeather();
   loadNews();
   setInterval(tick, 1000);
+  setInterval(syncClock, 5 * 60 * 1000);
   setInterval(loadContent, 15 * 60 * 1000);
   setInterval(loadWeather, 30 * 60 * 1000);
   setInterval(loadNews, 10 * 60 * 1000);
