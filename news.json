@@ -1,6 +1,34 @@
 {
-  "updatedAt": "2026-10-23T09:57:03+00:00",
+  "updatedAt": "2026-10-23T15:07:02+00:00",
   "items": [
+    {
+      "title": "Meghan says she was informed about 'disturbing allegations' against her father in 2018",
+      "summary": "The Duchess of Sussex issues a statement following reports her estranged father is being investigated over child sex abuse images in the Philippines.",
+      "link": "https://www.bbc.co.uk/news/articles/c6x2wpgejjkjo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e2ae/live/13ebb490-cedb-11f1-b441-2b33b063138f.jpg"
+    },
+    {
+      "title": "Meghan's father investigated by police over child sex abuse image claims",
+      "summary": "The Duchess of Sussex has said she is \"deeply distressed\" by allegations that her estranged father possessed child sex abuse images.",
+      "link": "https://news.sky.com/story/meghan-deeply-distressed-by-allegations-against-her-father-thomas-markle-13602319",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-duchess-of-sussex-meghan_7384470.jpg?20261023110214"
+    },
+    {
+      "title": "Burnham suggests stocking up on tinned food and bottled water",
+      "summary": "The prime ministers says unexpected events seem to be becoming more common and it was wise to prepare.",
+      "link": "https://www.bbc.co.uk/news/articles/ckr5yz2pqqppo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5632/live/6ac13550-cedc-11f1-8507-45cb00a1c41c.png"
+    },
+    {
+      "title": "Three people linked to Conservatives sentenced after cheating at gambling on general election",
+      "summary": "Three people linked to the Conservatives, including the party's former director of campaigning, have been given suspended sentences after admitting to cheating at gambling on the 2024…",
+      "link": "https://news.sky.com/story/three-people-linked-to-conservatives-sentenced-after-cheating-at-gambling-on-general-election-13602611",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/09/1920x1080/skynews-conservative-rosette_7347028.jpg?20260910132230"
+    },
     {
       "title": "Detective raped by colleague says Met handling of case 'like being raped again'",
       "summary": "Linda Williams was attacked by David Carrick, who was jailed in 2023 for sexual offences against 12 women.",
@@ -9,39 +37,11 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3bae/live/f5a32300-ce54-11f1-a166-e30097724580.jpg"
     },
     {
-      "title": "Meghan 'deeply distressed' by reports of allegations against her father",
-      "summary": "The Duchess of Sussex says she is \"deeply distressed\" by reports of allegations against her father Thomas Markle.",
-      "link": "https://news.sky.com/story/meghan-deeply-distressed-by-allegations-against-her-father-thomas-markle-13602319",
+      "title": "Terror probe after fatal shooting in Paris suburb",
+      "summary": "A terror investigation is under way after one person was shot dead and four others injured in an outer suburb of Paris.",
+      "link": "https://news.sky.com/story/one-dead-and-several-wounded-after-shooting-in-paris-suburb-13602320",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-thomas-markle-grab_7384468.jpg?20261023105503"
-    },
-    {
-      "title": "First personalised cancer vaccine cuts risk of disease returning in major trial",
-      "summary": "The scientists involved say the results could mark a turning point in cancer treatment, bringing personalised medicine a step closer.",
-      "link": "https://www.bbc.co.uk/news/articles/cq0ld9g9e913o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f379/live/0f348400-cead-11f1-bc2e-018d645d8d21.jpg"
-    },
-    {
-      "title": "Israel orders army to prepare to fully close West Bank after 'thwarting terror attack'",
-      "summary": "The Israeli government has ordered its army to prepare for a full closure of the occupied West Bank following a shooting near Hebron.",
-      "link": "https://news.sky.com/story/israel-orders-army-to-prepare-to-fully-close-west-bank-after-attack-13602577",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-israeli-soldiers-hebron_7384380.jpg?20261023092252"
-    },
-    {
-      "title": "Lights will stay on this winter, grid operator says after concerns",
-      "summary": "The assurance from the National Energy System Operator comes amid concern from its engineers about their ability to ensure adequate supply.",
-      "link": "https://www.bbc.co.uk/news/articles/cmy56q2n1veqo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c4ec/live/bd0928a0-ce22-11f1-9f18-490cec60aa0f.jpg"
-    },
-    {
-      "title": "The national resilience moment that almost unfolded in silence - in stark contrast to NATO allies",
-      "summary": "It was the national resilience moment that very nearly barely happened.",
-      "link": "https://news.sky.com/story/be-ready-checklist-the-national-resilience-moment-that-almost-barely-happened-13602517",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-wes-streeting-uk_7384205.jpg?20261022232609"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-trappes-yvelines-france_7384627.jpg?20261023135950"
     }
   ]
 }
