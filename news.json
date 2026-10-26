@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-10-26T10:58:50+00:00",
+  "updatedAt": "2026-10-26T16:48:27+00:00",
   "items": [
+    {
+      "title": "Independent review announced into murder of student Henry Nowak",
+      "summary": "\"We must get to truth of what happened before, during and after that awful night,\" the home secretary says while announcing the review.",
+      "link": "https://www.bbc.co.uk/news/articles/cv70pnw784x7o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a43b/live/79bb9a20-603f-11f1-89a3-d1f559421220.jpg"
+    },
+    {
+      "title": "Anthropic reveals plans for blockbuster IPO",
+      "summary": "Artificial intelligence giant Anthropic, the company behind the popular Claude chatbot, has filed papers to sell shares to the public for the first time.",
+      "link": "https://news.sky.com/story/anthropic-reveals-loss-as-it-plans-to-sell-public-shares-for-first-time-13604009",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/09/1920x1080/skynews-claude-ai_7347723.jpg?20260911092015"
+    },
     {
       "title": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
       "summary": "Around 90,000 properties are without power after Scotland and north England is battered by strong winds.",
@@ -9,39 +23,25 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3365/live/16d03480-d118-11f1-b441-2b33b063138f.jpg"
     },
     {
-      "title": "Met Office issues new weather warning for wind - as two men killed by falling trees",
-      "summary": "The Met Office has issued a new wind weather warning after Storm Boelo pummelled the UK with gusts of up to 84mph, flooded streets and caused power cuts to 800,000 homes.",
-      "link": "https://news.sky.com/story/two-men-killed-by-falling-trees-and-90000-without-power-as-storm-boelo-recovery-under-way-13603854",
+      "title": "Trump launches foul-mouthed tirade at Norway - as 'number one fan' Nicki Minaj attends rally",
+      "summary": "Nicki Minaj said Donald Trump \"has given us a future to look forward to\" as she joined the US president on stage at a rally in Michigan.",
+      "link": "https://news.sky.com/story/donald-trump-joined-by-number-one-fan-nicki-minaj-at-campaign-rally-13603867",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-weather-uk_7387410.jpg?20261026033125"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-trump-nicki-minaj_7387480.jpg?20261026073204"
     },
     {
-      "title": "Consultant doctors in England to strike next month",
-      "summary": "Senior doctors to stage 48-hour walkout, beginning on 25 November, in dispute over pay and pensions.",
-      "link": "https://www.bbc.co.uk/news/articles/c69wzxw2pvv0o?at_medium=RSS&at_campaign=rss",
+      "title": "Chris Brown given suspended eight-month prison sentence over nightclub attack",
+      "summary": "The R&B star previously pleaded guilty to affray, after attacking a music producer with a glass bottle.",
+      "link": "https://www.bbc.co.uk/news/articles/cq3dje4g4d5jo?at_medium=RSS&at_campaign=rss",
       "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9675/live/c9798c10-d124-11f1-9a61-7b8d75492b97.png"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/49e6/live/50a614d0-d14b-11f1-93e1-3b657b665bcf.jpg"
     },
     {
-      "title": "Senior doctors to strike for two days in November",
-      "summary": "Senior doctors in England plan to go on strike for two days in November over pay, the British Medical Association (BMA) has said.",
-      "link": "https://news.sky.com/story/senior-doctors-in-england-to-strike-for-two-days-in-november-13603895",
+      "title": "Drivers who killed mother and young daughter as they raced are jailed",
+      "summary": "Two strangers who killed a mother and her four-year-old daughter as they raced their high-performance cars along a city centre road have been jailed for 16 and 12 years.",
+      "link": "https://news.sky.com/story/drivers-who-killed-mother-and-young-daughter-as-they-raced-are-jailed-13603999",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/06/1920x1080/skynews-doctor-strikes-bma_7285988.jpg?20260629183735"
-    },
-    {
-      "title": "Knighting Sinfield 'easiest decision anyone's had to make,' says Prince William",
-      "summary": "The rugby league star is \"gold dust\" and \"should have been Sir Kevin years ago,\" says the Prince of Wales.",
-      "link": "https://www.bbc.co.uk/news/articles/c65ynjkrjq4wo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0472/live/ed2de750-d10b-11f1-a701-fddedf244c16.jpg"
-    },
-    {
-      "title": "London's Oxford Street pedestrianised in 'truly momentous occasion for capital'",
-      "summary": "London's Oxford Street is now traffic-free, with mayor Sadiq Khan hailing it \"a truly momentous occasion for the capital\".",
-      "link": "https://news.sky.com/story/londons-oxford-street-pedestrianised-in-truly-momentous-occasion-for-capital-13603905",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-sadiq-khan-oxford-street_7387505.jpg?20261026080735"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-hardeep-bhachu-jasskamal-riyat_7387869.jpg?20261026131721"
     }
   ]
 }
