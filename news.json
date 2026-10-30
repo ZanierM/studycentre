@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-10-30T11:19:02+00:00",
+  "updatedAt": "2026-10-30T16:42:23+00:00",
   "items": [
+    {
+      "title": "Police Scotland carrying out 'active inquiries' into Andrew and Epstein Balmoral visits",
+      "summary": "The force said it had received information and stressed its inquiries were at \"an early stage\".",
+      "link": "https://www.bbc.co.uk/news/articles/cqglwp088532o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/107f/live/fce8fef0-d47b-11f1-80bc-6d398902272f.jpg"
+    },
+    {
+      "title": "Bomb squad called and homes evacuated after 'neighbour dispute'",
+      "summary": "Homes have been evacuated while a bomb squad examines \"several suspicious items\" found by police after a row between neighbours.",
+      "link": "https://news.sky.com/story/homes-evacuated-and-bomb-squad-called-after-neighbour-dispute-13605700",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-sawyers-grove-brentwood_7391903.jpg?20261030142349"
+    },
     {
       "title": "Streeting denies 'kicking can down the road' in defence spending row",
       "summary": "The government is under pressure to set out a path to greater defence spending, as ministers unveil plans to boost UK firms.",
@@ -9,39 +23,25 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1e71/live/d6dac2e0-d44c-11f1-93e1-3b657b665bcf.jpg"
     },
     {
-      "title": "Crypto industry suffers 'largest bank heist in human history'",
-      "summary": "Cryptocurrency worth more than $6.3bn (£4.7bn) has been stolen from a major exchange - with one industry insider telling Sky News it is \"the largest bank heist in human history\".",
-      "link": "https://news.sky.com/story/crypto-worth-billions-frozen-over-potential-security-issue-13605627",
+      "title": "Bugatti CEO chases down car thief - then offers him lift home",
+      "summary": "The head of the luxury car-maker Bugatti has promised to stop leaving his keys in his own car after his £2m model was stolen from a company site in Zagreb.",
+      "link": "https://news.sky.com/story/bugattis-ceo-mate-rimac-down-car-thief-then-offers-him-lift-home-13605756",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-bitcoin-crypto_7391549.jpg?20261030004210"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-bugatti-chiron-hypercar_7391842.jpg?20261030125706"
     },
     {
-      "title": "Yorkshire Water boss resigns after firm downgraded",
-      "summary": "Nicola Shaw, who has led the company since 2022, will step down in January, it is announced.",
-      "link": "https://www.bbc.co.uk/news/articles/ckzd623pldqgo?at_medium=RSS&at_campaign=rss",
+      "title": "Driver guilty of dragging head teacher to his death",
+      "summary": "Simon Richardson is convicted of murdering head teacher Michael Mullins and will be sentenced on Monday.",
+      "link": "https://www.bbc.co.uk/news/articles/c6e3xg5we9eyo?at_medium=RSS&at_campaign=rss",
       "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b90/live/5715cb30-d434-11f1-b610-e9c472d2c97b.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f491/live/4e6457c0-d233-11f1-a1ed-ffd83ae54f7c.jpg"
     },
     {
-      "title": "Police investigating Andrew's Balmoral stays with Epstein and Maxwell",
-      "summary": "Police are investigating Andrew Mountbatten-Windsor's stays with Jeffrey Epstein and Ghislaine Maxwell at Balmoral.",
-      "link": "https://news.sky.com/story/police-investigating-andrews-balmoral-stays-with-jeffrey-epstein-and-ghislaine-maxwell-13603777",
+      "title": "Yorkshire Water boss resigns after company given lowest environmental rating",
+      "summary": "Yorkshire Water has announced its chief executive is stepping down - a day after the company was given the lowest environmental rating by regulators.",
+      "link": "https://news.sky.com/story/yorkshire-water-boss-resigns-after-company-given-lowest-environmental-rating-13605746",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-jeffrey-epstein-ghislaine-maxwell_7391718.jpg?20261030101305"
-    },
-    {
-      "title": "'I run a spotless kitchen', says Michelin-star restaurant chef in wake of food hygiene debacle",
-      "summary": "Chef Gareth Ward defends how he operates in documentary after Ynyshir got a one-star hygiene rating.",
-      "link": "https://www.bbc.co.uk/news/articles/cqp8g19r66y4o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d7e9/live/7ce4e4d0-d386-11f1-a701-fddedf244c16.jpg"
-    },
-    {
-      "title": "Star Trek and X-Men actor Sir Patrick Stewart dies",
-      "summary": "Star Trek and X-Men actor Sir Patrick Stewart has died after a \"brief and poignant journey\" with Alzheimer's and dementia.",
-      "link": "https://news.sky.com/story/star-trek-and-x-men-actor-sir-patrick-stewart-dies-aged-86-13605543",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-stewart-patrick_7391531.jpg?20261029232424"
+      "image": "https://e3.365dm.com/26/10/1920x1080/skynews-baitings-reservoir_7391819.jpg?20261030121106"
     }
   ]
 }
