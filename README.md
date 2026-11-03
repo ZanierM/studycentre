@@ -6,7 +6,7 @@ A display for the TV in the Year 12 Study Centre. It runs by itself and needs no
 - The time and date.
 - **Right now:** the current period (using the Mon–Thu or Friday bell times), time left, and a progress bar.
 - **Focus timer:** 25 minutes of focus, then a 5-minute break, starting from the beginning of each lesson so the whole room works together.
-- **Break Space:** shows Open at break and lunch and Closed at all other times, with when it next opens.
+- **Break Space:** shows Open before school, at break and at lunch, and Closed at all other times, with when it next opens.
 - **Along the bottom:** zone reminders and notices, plus the Gravesend weather, including whether rain is likely later.
 
 **Panels that rotate every 15 seconds:** countdowns, the study technique of the day, revision tools, who can help, a thought for the day, and notices.
