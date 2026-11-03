@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T12:44:12+00:00",
+  "updatedAt": "2026-11-03T17:51:40+00:00",
   "items": [
     {
       "title": "UK and EU agree draft deal to scrap Brexit red tape over food exports",
@@ -10,10 +10,24 @@
     },
     {
       "title": "Cyber attacks affect UK meat processing industry, top security official says",
-      "summary": "Cyber attacks have affected the UK meat processing industry, a top cyber security official has said in the wake of hacks that hit supermarkets across Europe.",
+      "summary": "Cyber attacks have affected the UK meat processing industry, a top security official has said in the wake of hacks that hit supermarkets across Europe.",
       "link": "https://news.sky.com/story/cyber-attacks-affect-uk-meat-processing-industry-top-security-official-says-13607346",
       "source": "Sky News",
       "image": "https://e3.365dm.com/26/11/1920x1080/skynews-supermarket-belgium_7395713.jpg?20261103122828"
+    },
+    {
+      "title": "King calls slave trade a 'shameful chapter' during Commonwealth address",
+      "summary": "The speech comes after calls for the UK government to issue a formal apology for Britain's historic role in the trade.",
+      "link": "https://www.bbc.co.uk/news/articles/cr89znnnn7dno?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e80d/live/1a61d4e0-d7a9-11f1-b441-2b33b063138f.jpg"
+    },
+    {
+      "title": "Reform councillor charged with 35 offences including rape",
+      "summary": "A Reform UK councillor has been charged with 35 offences, including 12 counts of rape, the Crown Prosecution Service (CPS) said.",
+      "link": "https://news.sky.com/story/reform-councillor-charged-with-35-offences-including-rape-13607499",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-george-madgwick-hampshire_7395880.jpg?20261103151149"
     },
     {
       "title": "Scientists detect signals at the smallest scale ever explored",
@@ -23,25 +37,11 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/eca0/live/1ab4cfb0-d2ef-11f1-b441-2b33b063138f.jpg"
     },
     {
-      "title": "Spanish footballer dies after on-field collision",
-      "summary": "Tenerife football player Jesus de Miguel has died after an on-field collision in a match on Monday, his club have announced.",
-      "link": "https://news.sky.com/story/tenerife-footballer-jesus-de-miguel-30-dies-after-on-field-collision-13607419",
+      "title": "Bomb threats reported on multiple flights, including two from UK airports",
+      "summary": "At least seven flights, including two from the UK, have been affected by bomb threats, which caused unplanned landings and temporary airport closures.",
+      "link": "https://news.sky.com/story/bomb-threats-reported-on-multiple-flights-13607460",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-jesus-de-miguel-tenerife_7395617.jpg?20261103101535"
-    },
-    {
-      "title": "Mahmood refuses to put cost on care worker settlement climbdown",
-      "summary": "The home secretary says the full cost of dropping plans to extend the wait for settlement will be laid out in future.",
-      "link": "https://www.bbc.co.uk/news/articles/cm75pgqdyzldo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7457/live/a8002b30-d768-11f1-a956-ff083523ef77.png"
-    },
-    {
-      "title": "Airlines warn budget raid will drive up passenger fares",
-      "summary": "Britain's leading airlines have warned the government that a little-noticed budget measure risks pushing up airfares for passengers.",
-      "link": "https://news.sky.com/story/airlines-warn-budget-raid-will-drive-up-passenger-fares-13607444",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/22/05/1920x1080/skynews-virgin-atlantic-british-airways_5760847.jpg?20220504225021"
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-bomb-hoax-spain-ryanair_7395864.jpg?20261103145241"
     }
   ]
 }
