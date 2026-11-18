@@ -1,26 +1,47 @@
 {
-  "updatedAt": "2026-11-18T13:50:01+00:00",
+  "updatedAt": "2026-11-18T18:52:17+00:00",
   "items": [
     {
-      "title": "Boy, 3, dies after incident at nursery",
+      "title": "Typical energy bill forecast to go up by £443 a year from January as inflation rate rises again",
+      "summary": "Energy bills are expected to jump by 26% a year for a typical household as UK inflation hits its highest rate for a year.",
+      "link": "https://www.bbc.co.uk/news/articles/cmy498kdkx3xo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4a59/live/128bd8c0-e35b-11f1-99b6-a35a62fa4264.jpg"
+    },
+    {
+      "title": "Britain's biggest defence company to cut more than 1,000 jobs",
+      "summary": "British multinational aerospace, arms and information security company BAE Systems is to cut more than 1,000 jobs in its air division.",
+      "link": "https://news.sky.com/story/britains-biggest-defence-company-to-cut-more-than-1000-jobs-13610507",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-bae-systems-wes-streeting_7409747.jpg?20261118164744"
+    },
+    {
+      "title": "Council wins legal fight against flags on lamp-posts",
+      "summary": "In her decision, Judge Emma Kelly says there was a \"compelling need\" to grant the interim injunction.",
+      "link": "https://www.bbc.co.uk/news/articles/ckq5vg81805qo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b62/live/877c24c0-a17d-11f1-9619-edac4fa7937f.jpg"
+    },
+    {
+      "title": "Boy, three, dies after incident at nursery",
       "summary": "Police have launched an investigation after a three-year-old boy died in Middleton, Greater Manchester.",
       "link": "https://news.sky.com/story/boy-3-dies-after-incident-at-nursery-greater-manchester-police-say-13613493",
       "source": "Sky News",
       "image": "https://e3.365dm.com/21/04/1920x1080/skynews-police-generic_5354484.jpg?20210424145714"
     },
     {
-      "title": "Woman shot in Glasgow as police hunt attacker",
-      "summary": "Police are looking for an attacker after a woman was shot in Glasgow.",
-      "link": "https://news.sky.com/story/woman-shot-in-glasgow-as-police-hunt-attacker-13613550",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-glasgow-eynort-street_7409569.jpg?20261118125119"
+      "title": "Minister criticises media for 'amplifying' Russell Brand's prison message",
+      "summary": "Lucy Powell says outlets shouldn't have played a clip of a message read by the jailed rapist's wife.",
+      "link": "https://www.bbc.co.uk/news/articles/cq702k1w8xd3o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3906/live/4ed62600-e342-11f1-99aa-0f40b013ad11.jpg"
     },
     {
-      "title": "Actor Noel Clarke appears in court over alleged sexual offences",
-      "summary": "Actor Noel Clarke has appeared in court after being charged with alleged sexual offences against five women.",
-      "link": "https://news.sky.com/story/noel-clarke-appears-in-court-over-alleged-sexual-offences-13612781",
+      "title": "Premier League clubs to meet amid frustration over EFL deal progress",
+      "summary": "Premier League clubs will meet on Thursday amid increasing frustration that attempts to secure a landmark financial settlement with the English Football League (EFL) have yet to result in a…",
+      "link": "https://news.sky.com/story/premier-league-clubs-to-meet-amid-frustration-over-efl-deal-progress-13613669",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-noel-clarke-court_7409349.jpg?20261118091725"
+      "image": "https://e3.365dm.com/26/09/1920x1080/skynews-martin-odegaard-premier_7348179.jpg?20260911154852"
     }
   ]
 }
