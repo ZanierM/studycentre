@@ -1,33 +1,19 @@
 {
-  "updatedAt": "2026-11-20T13:56:32+00:00",
+  "updatedAt": "2026-11-20T18:38:00+00:00",
   "items": [
     {
-      "title": "Tens of thousands of UK fridges secured from hackers in secret nationwide operation",
-      "summary": "Supermarkets, warehouses, restaurants and stadiums have been scrambling to make their devices safe.",
-      "link": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o?at_medium=RSS&at_campaign=rss",
+      "title": "UK to explore even closer ties with EU after agreeing deal, says Burnham",
+      "summary": "The UK-EU deal agreed on Friday covers British food exports, emissions trading and a youth experience scheme.",
+      "link": "https://www.bbc.co.uk/news/articles/c6jreyqgw4e9o?at_medium=RSS&at_campaign=rss",
       "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d3db/live/57d6aa20-d769-11f1-a956-ff083523ef77.jpg"
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d4e5/live/f4ea50b0-e505-11f1-99a1-253766e7ad8b.jpg"
     },
     {
-      "title": "Calls for consent law change after Joanne Young rape case",
-      "summary": "Calls for a change to the law on consent have grown in the wake of the Joanne Young rape case.",
-      "link": "https://news.sky.com/story/calls-for-consent-law-change-after-joanne-young-rape-case-13614288",
+      "title": "'Danny Tommo' jailed for slashing migrant dinghy",
+      "summary": "Anti-migrant activist Danny Tommo has been sentenced to 15 months in prison after using a knife to slash a boat in the English Channel.",
+      "link": "https://news.sky.com/story/anti-migrant-activist-danny-tommo-jailed-for-slashing-dinghy-13613173",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-joanne-young-court_7410678.jpg?20261119160357"
-    },
-    {
-      "title": "Massive hope for pancreatic cancer pill after trial saw tumours vanish",
-      "summary": "Daily pill daraxonrasib appears to shrink and possibly even eliminate tumours in some patients with one of the deadliest cancers.",
-      "link": "https://www.bbc.co.uk/news/articles/cqrmgjnzz9l0o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4568/live/3c973e20-e4be-11f1-99a1-253766e7ad8b.png"
-    },
-    {
-      "title": "UK conducting offensive cyber ops against Russia, China, Iran and North Korea, says top commander",
-      "summary": "The UK is conducting offensive cyber operations against Russia, China, Iran and North Korea, a top military commander has for the first time revealed.",
-      "link": "https://news.sky.com/story/uk-conducting-offensive-cyber-ops-against-russia-china-iran-and-north-korea-top-commander-reveals-13614163",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-soldier-cyber-ops_7410955.jpg?20261119214131"
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-daniel-thomas-danny-tommo_7411370.jpg?20261120122219"
     },
     {
       "title": "Calls for consent defence change after Joanne Young rape case",
@@ -37,11 +23,25 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3bf1/live/0fd5d6a0-e4b2-11f1-a1dc-9f4190df3aa7.png"
     },
     {
-      "title": "Myanmar rejects UN court's genocide ruling as 'unfair'",
-      "summary": "Myanmar branded a ruling by the UN's highest court that its security forces conducted state-sponsored genocide against Rohingya Muslims as \"unfair\".",
-      "link": "https://news.sky.com/story/myanmar-rejects-un-courts-rohingya-genocide-guilty-verdict-as-unfair-13614272",
+      "title": "Anthropic among big fallers in global stock market rout",
+      "summary": "Shares in Anthropic have fallen by more than 10% at Friday's open on Wall Street, just a day after their record-breaking Nasdaq debut, as part of a global stock market rout.",
+      "link": "https://news.sky.com/story/anthropic-among-big-fallers-in-global-stock-market-rout-13614361",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-rohingya-icj_7411269.jpg?20261120103409"
+      "image": "https://e3.365dm.com/25/04/1920x1080/skynews-traders-new-york-stock-exchange_6881899.jpg?20250410154647"
+    },
+    {
+      "title": "Daniel Thomas jailed for 15 months for slashing dinghy",
+      "summary": "A judge called the anti-migrant activist a “publicity seeker” who disrupted the work of rescue crews.",
+      "link": "https://www.bbc.co.uk/news/articles/c6lywjpn5levo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b7b1/live/8179c6e0-e4f8-11f1-99a1-253766e7ad8b.jpg"
+    },
+    {
+      "title": "Two dead after microlight glider crashes",
+      "summary": "The bodies of two men have been recovered after a microlight glider crashed into a Scottish loch.",
+      "link": "https://news.sky.com/story/two-men-killed-after-microlight-glider-crashes-into-loch-leven-13614433",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-loch-leven-in-kinross_7411628.jpg?20261120171749"
     }
   ]
 }
