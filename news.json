@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-11-24T15:43:37+00:00",
+  "updatedAt": "2026-11-24T20:40:41+00:00",
   "items": [
+    {
+      "title": "Disability benefit review calls for closer link with claimant costs",
+      "summary": "A government-commissioned report calls for a \"rebalancing\" of the amount paid to different claimants.",
+      "link": "https://www.bbc.co.uk/news/articles/cm4gn6gn9057o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8836/live/971a11c0-e828-11f1-8d9d-c156c75bcdb5.jpg"
+    },
+    {
+      "title": "'Unknown substance' released at rap concert could be linked to 'robberies', police say",
+      "summary": "The \"unknown substance\" that sparked a mass evacuation at a rap concert could be linked to robberies and reports of jewellery being stolen, police say.",
+      "link": "https://news.sky.com/story/release-of-unknown-substance-at-manchester-concert-could-be-linked-to-reports-of-robberies-police-say-13615883",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-manchester-arena-police_7414125.jpg?20261123072232"
+    },
     {
       "title": "Two arrested on suspicion of burglary at Prince and Princess of Wales's Norfolk home",
       "summary": "The break-in took place at the family's country retreat in Norfolk, on the Sandringham Estate.",
@@ -23,25 +37,11 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/be90/live/aad9c570-e729-11f1-914b-6d226d813a52.jpg"
     },
     {
-      "title": "Inmate who murdered Ian Huntley given second whole-life prison sentence",
-      "summary": "An inmate who murdered Soham killer Ian Huntley has been sentenced to a second whole-life prison term.",
-      "link": "https://news.sky.com/story/prisoner-admits-murder-of-soham-killer-ian-huntley-13615941",
+      "title": "London Underground strike to go ahead after talks break down",
+      "summary": "A 24-hour strike by London Tube drivers is set to go ahead this week after talks failed to resolve the dispute.",
+      "link": "https://news.sky.com/story/london-underground-strike-to-go-ahead-after-talks-break-down-13614235",
       "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-anthony-russell-ian-huntley_7415212.jpg?20261124115006"
-    },
-    {
-      "title": "Government probe into housing scheme 'exploitation'",
-      "summary": "Birmingham has more than 34,000 people living in Supported Exempt Accommodation.",
-      "link": "https://www.bbc.co.uk/news/articles/cm0rk19kl52do?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8509/live/e31149b0-e7f9-11f1-99a1-253766e7ad8b.png"
-    },
-    {
-      "title": "Senegal restored as Africa Cup of Nations champions",
-      "summary": "Senegal has been awarded the Africa Cup of Nations title after successfully appealing against the decision to strip them of it.",
-      "link": "https://news.sky.com/story/senegal-awarded-africa-cup-of-nations-after-winning-appeal-over-title-being-stripped-13615900",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-senegal-morocco_7415350.jpg?20261124144126"
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-london-underground_7415541.jpg?20261124180037"
     }
   ]
 }
