@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-11-27T14:55:37+00:00",
+  "updatedAt": "2026-11-27T19:29:13+00:00",
   "items": [
+    {
+      "title": "Millions lose access to benefits and pensions services after 'cyber incident'",
+      "summary": "The Department for Work and Pensions says some of its services have been take offline as a precaution.",
+      "link": "https://www.bbc.co.uk/news/articles/c8wy5p6pv2e2o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a6ef/live/2c353ff0-ea95-11f1-a094-5fdc692f3e33.jpg"
+    },
+    {
+      "title": "'Monster' jailed for coercing children into acts of violence and sexual activity online",
+      "summary": "A man who was part of an organised crime group that blackmailed and distributed indecent images of children has been jailed for 14 and a half years.",
+      "link": "https://news.sky.com/story/man-jailed-for-blackmail-and-sharing-indecent-child-images-on-sinister-com-network-13617127",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-beau-jack-mensforth_7417740.jpg?20261127110618"
+    },
     {
       "title": "'I wouldn't be here today without you': Student's praise for man who stopped train attacker",
       "summary": "Astrid credits Stephen Crean with saving her life during the Huntingdon train attack last year.",
@@ -9,39 +23,25 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b745/live/55191660-ea65-11f1-99a1-253766e7ad8b.jpg"
     },
     {
+      "title": "Police seek 100 concertgoers over mass evacuation at Manchester rap gig",
+      "summary": "A \"small group of organised criminals\" are being sought by police after an unknown substance sparked a mass evacuation at a Manchester concert.",
+      "link": "https://news.sky.com/story/small-group-of-organised-criminals-sought-over-manchester-concert-evacuation-13617249",
+      "source": "Sky News",
+      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-don-toliver-concert_7414336.jpg?20261123113339"
+    },
+    {
+      "title": "Police look for more than 100 gig-goers to help Co-op Live probe",
+      "summary": "Rap fans say people were \"choking\" and \"coughing up blood\" towards the end of Don Toliver's gig.",
+      "link": "https://www.bbc.co.uk/news/articles/c8wy5vnpggnpo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f39f/live/f13ad370-ea7a-11f1-9888-1b7e4a7a7390.png"
+    },
+    {
       "title": "Kenyan cult leader in jail for 191 murders convicted over another 123 deaths",
       "summary": "A Kenyan cult leader has been convicted of manslaughter over the deaths of 123 of his followers, having already been found guilty of murdering 191 others.",
       "link": "https://news.sky.com/story/kenyan-cult-leader-in-jail-for-191-murders-convicted-over-another-123-deaths-13617227",
       "source": "Sky News",
       "image": "https://e3.365dm.com/26/11/1920x1080/skynews-paul-mackenzie-good-news-international_7398786.jpg?20261127144057"
-    },
-    {
-      "title": "NHS boss warns of 'horrible spike' in flu as hospital admissions surge",
-      "summary": "Health officials are urging those at risk of getting flu to get vaccinated as soon as possible.",
-      "link": "https://www.bbc.co.uk/news/articles/cwvg2ndxdjr2o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/569b/live/83ef8790-ea37-11f1-a094-5fdc692f3e33.jpg"
-    },
-    {
-      "title": "Poundland boss urges staff to feel pride in turnaround efforts",
-      "summary": "Poundland's boss has told staff to feel proud of their efforts to revitalise the discount retailer despite its collapse into administration earlier this week.",
-      "link": "https://news.sky.com/story/poundland-boss-urges-staff-to-feel-pride-in-turnaround-efforts-13617201",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/09/1920x1080/skynews-poundland-retail_7364343.jpg?20260929173320"
-    },
-    {
-      "title": "'We have no interest in hearing from Huw Edwards', Downing Street says",
-      "summary": "There has been a backlash against new interviews with the disgraced former BBC News presenter.",
-      "link": "https://www.bbc.co.uk/news/articles/c60mdl2y2w3do?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d51b/live/6e67b490-ea66-11f1-a828-d384c0290f6b.jpg"
-    },
-    {
-      "title": "Powerful storm knocks out power and disrupts flights in US - as major Thanksgiving event cancelled",
-      "summary": "Powerful storms across the US have left hundreds of thousands of homes without power and disrupted thousands of flights ahead of Thanksgiving weekend.",
-      "link": "https://news.sky.com/story/hundreds-of-thousands-still-without-power-after-storms-hit-us-on-thanksgiving-13617158",
-      "source": "Sky News",
-      "image": "https://e3.365dm.com/26/11/1920x1080/skynews-thanksgiving-weather_7417841.jpg?20261127133353"
     }
   ]
 }
